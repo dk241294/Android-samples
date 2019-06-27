@@ -16,8 +16,20 @@ import java.util.Locale;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
+        if (savedInstanceState !=null){
+           seconds= savedInstanceState.getInt("seconds",seconds);
+           running=savedInstanceState.getBoolean("running",running);
+
+        }
         runTimer();
     }
+
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("seconds", seconds);
+        savedInstanceState.putBoolean("running", running);
+    }
+
     public void onClickStart(View view){
         running=true;
     }
@@ -38,6 +50,7 @@ import java.util.Locale;
                     int hours = seconds / 3600;
                     int minutes = (seconds % 3600) / 60;
                     int secs = seconds % 60;
+
                     String time = String.format(Locale.getDefault(),
                             "%d:%02d:%02d", hours, minutes, secs);
                     timeView.setText(time);
