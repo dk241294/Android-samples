@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    Button button;
     public void conversion(View view){
         EditText editText=findViewById(R.id.editText);
         EditText editText2=findViewById(R.id.editText2);
@@ -23,5 +24,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               conversion(v);
+            }
+        });
     }
 }
