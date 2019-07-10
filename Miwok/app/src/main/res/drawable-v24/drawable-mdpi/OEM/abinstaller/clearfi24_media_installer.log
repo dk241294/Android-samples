@@ -1,0 +1,128 @@
+18:12:9:700  LaunchAsNormalUser
+18:12:9:706  processId get 
+18:12:9:716  token get 
+18:12:9:722  ConvertStringSidToSid get 
+18:12:9:729  SetTokenInformation get 
+18:12:9:757  Process WaitForExit start
+18:12:11:530  Process WaitForExit end
+18:12:13:857  LaunchAsNormalUser
+18:12:13:864  processId get 
+18:12:13:876  token get 
+18:12:13:883  ConvertStringSidToSid get 
+18:12:13:893  SetTokenInformation get 
+18:12:13:921  Process WaitForExit start
+18:12:15:210  Process WaitForExit end
+12:51:20:73  LaunchAll with explorer 1444
+12:51:20:80  Primary Token 1888
+12:51:20:154  cb : 68
+12:51:20:186  lpReserved : 
+12:51:20:205  lpDesktop : WinSta0\Default
+12:51:20:212  lpTitle : 
+12:51:20:237  dwX : 0
+12:51:20:244  dwY : 0
+12:51:20:251  dwXSize : 0
+12:51:20:259  dwYSize : 0
+12:51:20:268  dwXCountChars : 0
+12:51:20:277  dwYCountChars : 0
+12:51:20:285  dwFillAttribute : 0
+12:51:20:310  dwFlags : 65
+12:51:20:318  wShowWindow : 0
+12:51:20:330  cbReserved2 : 0
+12:51:20:376  lpReserved2 : 0
+12:51:20:384  hStdInput : 0
+12:51:20:393  hStdOutput : 0
+12:51:20:412  hStdError : 0
+12:53:48:54  cb : 68
+12:53:48:64  lpReserved : 
+12:53:48:72  lpDesktop : WinSta0\Default
+12:53:48:80  lpTitle : 
+12:53:48:89  dwX : 0
+12:53:48:99  dwY : 0
+12:53:48:108  dwXSize : 0
+12:53:48:170  dwYSize : 0
+12:53:48:180  dwXCountChars : 0
+12:53:48:189  dwYCountChars : 0
+12:53:48:201  dwFillAttribute : 0
+12:53:48:222  dwFlags : 65
+12:53:48:247  wShowWindow : 5
+12:53:48:259  cbReserved2 : 0
+12:53:48:267  lpReserved2 : 0
+12:53:48:334  hStdInput : 0
+12:53:48:419  hStdOutput : 0
+12:53:48:428  hStdError : 0
+9:14:15:927  LaunchAll with explorer 4232
+9:14:15:955  Primary Token 1664
+9:14:16:82  cb : 68
+9:14:16:94  lpReserved : 
+9:14:16:108  lpDesktop : WinSta0\Default
+9:14:16:119  lpTitle : 
+9:14:16:129  dwX : 0
+9:14:16:139  dwY : 0
+9:14:16:148  dwXSize : 0
+9:14:16:158  dwYSize : 0
+9:14:16:171  dwXCountChars : 0
+9:14:16:189  dwYCountChars : 0
+9:14:16:201  dwFillAttribute : 0
+9:14:16:213  dwFlags : 65
+9:14:16:327  wShowWindow : 0
+9:14:16:339  cbReserved2 : 0
+9:14:16:389  lpReserved2 : 0
+9:14:16:399  hStdInput : 0
+9:14:16:411  hStdOutput : 0
+9:14:16:423  hStdError : 0
+9:17:42:938  cb : 68
+9:17:42:950  lpReserved : 
+9:17:42:964  lpDesktop : WinSta0\Default
+9:17:42:977  lpTitle : 
+9:17:42:988  dwX : 0
+9:17:43:0  dwY : 0
+9:17:43:8  dwXSize : 0
+9:17:43:17  dwYSize : 0
+9:17:43:26  dwXCountChars : 0
+9:17:43:35  dwYCountChars : 0
+9:17:43:44  dwFillAttribute : 0
+9:17:43:53  dwFlags : 65
+9:17:43:65  wShowWindow : 5
+9:17:43:84  cbReserved2 : 0
+9:17:43:112  lpReserved2 : 0
+9:17:43:131  hStdInput : 0
+9:17:43:143  hStdOutput : 0
+9:17:43:159  hStdError : 0
+20:48:13:580  LaunchAll with explorer 6360
+20:48:13:591  Primary Token 1968
+20:48:13:631  cb : 68
+20:48:13:635  lpReserved : 
+20:48:13:638  lpDesktop : WinSta0\Default
+20:48:13:642  lpTitle : 
+20:48:13:645  dwX : 0
+20:48:13:648  dwY : 0
+20:48:13:650  dwXSize : 0
+20:48:13:654  dwYSize : 0
+20:48:13:657  dwXCountChars : 0
+20:48:13:660  dwYCountChars : 0
+20:48:13:663  dwFillAttribute : 0
+20:48:13:666  dwFlags : 65
+20:48:13:669  wShowWindow : 0
+20:48:13:671  cbReserved2 : 0
+20:48:13:701  lpReserved2 : 0
+20:48:13:704  hStdInput : 0
+20:48:13:707  hStdOutput : 0
+20:48:13:710  hStdError : 0
+20:51:55:815  cb : 68
+20:51:55:827  lpReserved : 
+20:51:55:841  lpDesktop : WinSta0\Default
+20:51:55:852  lpTitle : 
+20:51:55:863  dwX : 0
+20:51:55:875  dwY : 0
+20:51:55:885  dwXSize : 0
+20:51:55:894  dwYSize : 0
+20:51:55:904  dwXCountChars : 0
+20:51:55:913  dwYCountChars : 0
+20:51:55:922  dwFillAttribute : 0
+20:51:55:932  dwFlags : 65
+20:51:55:944  wShowWindow : 5
+20:51:55:956  cbReserved2 : 0
+20:51:55:968  lpReserved2 : 0
+20:51:55:998  hStdInput : 0
+20:51:56:24  hStdOutput : 0
+20:51:56:39  hStdError : 0

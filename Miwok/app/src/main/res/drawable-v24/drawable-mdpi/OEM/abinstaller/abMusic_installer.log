@@ -1,0 +1,457 @@
+9:14:13:854  -------------------------------------------------------Installer Starts-------------------------------------------------------
+9:14:13:933  Process Path = C:\Users\dinkar\AppData\Local\clear.fi\Media\abMedia\abMediaSetup.exe
+9:14:13:959  work in system session
+9:14:13:968  args = /s
+9:14:14:5  m_szCurrentDir: C:\Users\dinkar\AppData\Local\clear.fi\Media\abMedia\
+9:14:14:13  m_szUserTempDir: C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\
+9:14:14:22  m_szUserTempDir2: C:\WINDOWS\TEMP\clear.fi_media\
+9:14:14:33  IsClearfiInstalled()
+9:14:14:53  Process is 64bit
+9:14:14:82  CheckPath: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{e9af1707-3f3a-49e2-8345-4f2d629d0876}
+9:14:14:91  Clearfi is installed
+9:14:14:112  CurrentVersion=3.00.2003.6
+9:14:14:121  OldVersion=2.09.2003.0
+9:14:14:190  IsPinnedToTaskbar check path[C:\Users\dinkar\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\abMusic.lnk] not found
+9:14:14:199  IsPinnedToTaskbar check path[C:\Users\dinkar\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\clear.fi Media.lnk] not found
+9:14:14:207  IsPinnedToTaskbar check path[C:\Users\dinkar\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Acer Media.lnk] not found
+9:14:14:216  IsPinnedToTaskbar check path[C:\Users\dinkar\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\abMedia.lnk] not found
+9:14:14:225  IsPinnedToTaskbar: False
+9:14:14:234  bClearfiInstalled: True
+9:14:14:307  bUpgrade: True
+9:14:14:316  bSilent: True
+9:14:14:327  m_bPinToTaskbar: False
+9:14:14:519  AcerCloud Related mutex Created New [True]
+9:14:14:564  bSilent & bUpgrade, Backup Registry then SetUpgradeDone(false)
+9:14:14:577  BackupRegistry()
+9:14:14:655  procInfo.FileName:C:\WINDOWS\system32\cmd.exe
+9:14:14:663  procInfo.Arguments:/c reg export HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{e9af1707-3f3a-49e2-8345-4f2d629d0876} "C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\registrybackup.reg"
+9:14:14:673  procInfo.WorkingDirectory:C:\WINDOWS\system32
+9:14:14:960  proc.WaitForExit()
+9:14:15:335  procInfo.FileName:C:\WINDOWS\system32\cmd.exe
+9:14:15:395  procInfo.Arguments:/c reg export HKEY_CLASSES_ROOT\Installer\Products\7071FA9EA3F32E943854F4D226D98067 "C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\registrybackup2.reg"
+9:14:15:404  procInfo.WorkingDirectory:C:\WINDOWS\system32
+9:14:15:429  proc.WaitForExit()
+9:14:15:591  SetUpgradeDone[False]
+9:14:15:616  Is process owner system: True
+9:14:15:625  DeleteTempFolder: C:\WINDOWS\TEMP\clear.fi_media\
+9:14:15:652  DeleteDirectory exception: Could not find a part of the path 'C:\WINDOWS\TEMP\clear.fi_media\'.
+9:14:15:666  m_bIsUpgradeFrom21: False
+9:14:15:684  InstallMode: Silent, InstallAction: Upgrade
+9:14:15:714  BackgroundWork
+9:14:15:726  BackgroundWork Unpin, m_bPinToTaskbar: False
+9:14:15:741  GetInstallPath in LocalMachine Open registry: Software\OEM\clear.fi Media
+9:14:15:752  GetInstallPathFromLocalMachine: C:\Program Files (x86)\Acer\abMedia\
+9:14:15:761  sSystemArgs: C:\Program Files (x86)\Acer\abMedia\unpinmedia.vbs
+9:14:15:772  sUserArgs: C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\unpinmedia.vbs
+9:14:15:870  PinPhotoToTaskbar: script exist - True
+9:14:15:882  Is process owner system: True
+9:14:15:891  System Session, use args with : C:\Program Files (x86)\Acer\abMedia\unpinmedia.vbs
+9:14:15:903  sCmd: "C:\Windows\system32\cscript.exe" "C:\Program Files (x86)\Acer\abMedia\unpinmedia.vbs"
+9:14:17:542  RemoveAllShortCut
+9:14:17:553  Delete C:\Users\Public\Desktop\abMusic.lnk
+9:14:17:564  Delete C:\Users\dinkar\Desktop\abMusic.lnk
+9:14:17:597  Delete C:\Users\Public\Desktop\clear.fi Media.lnk
+9:14:17:608  Delete C:\Users\dinkar\Desktop\clear.fi Media.lnk
+9:14:17:621  Delete C:\Users\Public\Desktop\Acer Media.lnk
+9:14:17:635  Delete C:\Users\dinkar\Desktop\Acer Media.lnk
+9:14:17:645  Delete C:\Users\Public\Desktop\abMedia.lnk
+9:14:17:659  Delete C:\Users\dinkar\Desktop\abMedia.lnk
+9:14:17:670  Delete C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\abMusic.lnk
+9:14:17:680  Delete C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\clear.fi Media.lnk
+9:14:17:692  Delete C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\Acer Media.lnk
+9:14:17:703  Delete C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\abMedia.lnk
+9:14:17:783  LaunchCompressFile
+9:14:17:801  procInfo.FileName:C:\Users\dinkar\AppData\Local\clear.fi\Media\abMedia\abMedia.exe
+9:14:17:811  procInfo.Arguments:
+9:14:17:825  procInfo.WorkingDirectory:C:\Users\dinkar\AppData\Local\clear.fi\Media\abMedia
+9:14:18:901  proc.WaitForExit()
+9:14:37:344  LaunchWixInstaller - Action.Upgrade
+9:14:37:354  RemoveOEMClearfiMedia
+9:14:37:364  DeleteSubKeyTree-clear.fi Media
+9:14:37:373  LaunchWixInstaller - Action.Uninstall
+9:14:37:382  Launch clear.fi installer: C:\WINDOWS\system32\msiexec.exe Args: /X {e9af1707-3f3a-49e2-8345-4f2d629d0876} /norestart /quiet /l*v "C:\oem\abinstaller\abMusic_msi.log"
+9:16:13:146  LaunchWixInstaller - Action.Install
+9:16:13:146  RemoveProductReg
+9:16:13:231  Exception - Cannot delete a subkey tree because the subkey does not exist.
+9:16:13:231  Launch clear.fi installer: C:\WINDOWS\system32\msiexec.exe Args: /i "C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\clear.fi_Media.msi" SHORTCUTDESKTOP=1 ALLUSERS=1 /norestart /quiet /l*v "C:\oem\abinstaller\abMusic_msi.log"
+9:17:23:517  Launch VCRunTime100 SDK installer: C:\WINDOWS\temp\vcredist_x86.exe, Args:  /q /norestart
+9:17:23:531  procInfo.FileName:C:\WINDOWS\temp\vcredist_x86.exe
+9:17:23:539  procInfo.Arguments: /q /norestart
+9:17:23:550  procInfo.WorkingDirectory:C:\WINDOWS\temp
+9:17:23:846  proc.WaitForExit()
+9:17:36:721  Launch AOP Framework installer: C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\AcerOpenPlatformSetup.exe, Args:  /s
+9:17:36:730  procInfo.FileName:C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\AcerOpenPlatformSetup.exe
+9:17:36:738  procInfo.Arguments: /s
+9:17:36:747  procInfo.WorkingDirectory:C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35
+9:17:36:786  proc.WaitForExit()
+9:17:42:781  SetRequiredRegistry[Upgrade]
+9:17:42:794  GetInstallPathFromCurrentUser: C:\Program Files (x86)\Acer\abMusic\
+9:17:42:803  action != Action.Uninstall, read install path from CurrentUser and set it into LocalMachine
+9:17:42:820  Succeed to write registry to HKEY_LOCAL_MACHINE 64
+9:17:42:830  Succeed to write registry to HKEY_LOCAL_MACHINE 32
+9:17:42:839  Succeed to set Player Registry 64
+9:17:42:848  Succeed to set Player Registry 32
+9:17:42:857  handle ODD auto-play setting
+9:17:42:866  IsCyberlinkMovieInstalled()
+9:17:42:876  install Acer Video Player
+9:17:42:888  SetVideoRegistry[False]
+9:17:42:898  Is process owner system: True
+9:17:42:907  Auto update, delete WMVideo key.
+9:17:43:179  RegVideoAx[False]
+9:17:43:506  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSplitter.ax
+9:17:43:608  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:43:617  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSplitter.ax"
+9:17:43:631  procInfo.WorkingDirectory:c:\windows\system32
+9:17:43:740  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerAMRDecoder.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAMRDecoder.ax
+9:17:43:756  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:43:766  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAMRDecoder.ax"
+9:17:43:777  procInfo.WorkingDirectory:c:\windows\system32
+9:17:43:828  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerAudioDecoder.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAudioDecoder.ax
+9:17:43:845  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:43:856  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAudioDecoder.ax"
+9:17:43:868  procInfo.WorkingDirectory:c:\windows\system32
+9:17:43:926  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerFLVSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerFLVSplitter.ax
+9:17:43:968  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:43:988  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerFLVSplitter.ax"
+9:17:44:9  procInfo.WorkingDirectory:c:\windows\system32
+9:17:44:85  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMKVSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMKVSplitter.ax
+9:17:44:170  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:44:184  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMKVSplitter.ax"
+9:17:44:198  procInfo.WorkingDirectory:c:\windows\system32
+9:17:44:318  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMP4Splitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter.ax
+9:17:44:357  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:44:376  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter.ax"
+9:17:44:391  procInfo.WorkingDirectory:c:\windows\system32
+9:17:44:601  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMP4Splitter2.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter2.ax
+9:17:44:735  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:44:752  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter2.ax"
+9:17:44:771  procInfo.WorkingDirectory:c:\windows\system32
+9:17:44:836  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMpegAudioSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegAudioSplitter.ax
+9:17:45:277  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:45:286  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegAudioSplitter.ax"
+9:17:45:296  procInfo.WorkingDirectory:c:\windows\system32
+9:17:45:349  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMpegSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegSplitter.ax
+9:17:45:372  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:45:386  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegSplitter.ax"
+9:17:45:402  procInfo.WorkingDirectory:c:\windows\system32
+9:17:45:465  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerSubtitle.dll to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSubtitle.dll
+9:17:45:487  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:45:502  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSubtitle.dll"
+9:17:45:521  procInfo.WorkingDirectory:c:\windows\system32
+9:17:45:570  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerVC1Decoder.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerVC1Decoder.ax
+9:17:45:594  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:45:616  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerVC1Decoder.ax"
+9:17:45:639  procInfo.WorkingDirectory:c:\windows\system32
+9:17:45:702  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerSoundPhoto.dll to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSoundPhoto.dll
+9:17:45:747  procInfo.FileName:c:\windows\system32\regsvr32.exe
+9:17:45:759  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSoundPhoto.dll"
+9:17:45:774  procInfo.WorkingDirectory:c:\windows\system32
+9:17:45:830  SetRegistryForAcerPortal[False]
+9:17:45:852  Process is 64bit
+9:17:45:868  GetInstallPath in LocalMachine Open registry: Software\OEM\clear.fi Media
+9:17:45:882  GetInstallPathFromLocalMachine: C:\Program Files (x86)\Acer\abMusic\
+9:17:45:897  Write Registry: SOFTWARE\Wow6432Node\OEM\Acer\MyApps\{e9af1707-3f3a-49e2-8345-4f2d629d0876}
+9:17:45:909  Get IconPath: C:\Program Files (x86)\Acer\abMusic\image\ico_media_152.png&C:\Program Files (x86)\Acer\abMusic\image\ico_media_114.png&C:\Program Files (x86)\Acer\abMusic\image\ico_media_96.png&C:\Program Files (x86)\Acer\abMusic\image\ico_media_76.png
+9:17:45:921  Get LaunchPath: C:\Program Files (x86)\Acer\abMusic\abMusic.exe
+9:17:45:935  Succeed to SetRegistryForAcerPortal
+9:17:45:945  Run Firewall Setting
+9:17:45:956  sExe=C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting\FirewallSettings.exe
+9:17:45:970  procInfo.FileName:C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting\FirewallSettings.exe
+9:17:45:980  procInfo.Arguments:abMusicDMCDaemon C:\Program Files (x86)\Acer\abMusic\DMCDaemon.exe
+9:17:45:990  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting
+9:17:46:33  proc.WaitForExit()
+9:17:47:752  procInfo.FileName:C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting\FirewallSettings.exe
+9:17:47:767  procInfo.Arguments:abMusicWindowsUpnp C:\Program Files (x86)\Acer\abMusic\WindowsUpnpMV.exe
+9:17:47:781  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting
+9:17:47:820  proc.WaitForExit()
+9:17:49:484  handle start menu shortcut, IsPinToTaskbar: False
+9:17:49:495  GetInstallPath in LocalMachine Open registry: Software\OEM\clear.fi Media
+9:17:49:506  GetInstallPathFromLocalMachine: C:\Program Files (x86)\Acer\abMusic\
+9:17:49:520  Desktop Shortcut[C:\Users\Public\Desktop\abMusic.lnk]
+9:17:49:530  Startmenu Shortcut[C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\abMusic.lnk]
+9:17:49:541  IconLocation Shortcut[C:\Program Files (x86)\Acer\abMusic\image\Clear.fi_Music.ico]
+9:17:49:551  AppModelID Shortcut[{e9af1707-3f3a-49e2-8345-4f2d629d0876}]
+9:17:49:562  Target[C:\Program Files (x86)\Acer\abMusic\abMusic.exe]
+9:17:49:574  procInfo.FileName:C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\newshortcut.exe
+9:17:49:583  procInfo.Arguments:"C:\Program Files (x86)\Acer\abMusic\abMusic.exe" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\abMusic.lnk" "C:\Program Files (x86)\Acer\abMusic\image\Clear.fi_Music.ico" "{e9af1707-3f3a-49e2-8345-4f2d629d0876}"
+9:17:49:593  procInfo.WorkingDirectory:C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35
+9:17:49:764  proc.WaitForExit()
+9:17:49:956  Create desktop shortcut
+9:17:49:964  procInfo.FileName:C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35\newshortcut.exe
+9:17:49:970  procInfo.Arguments:"C:\Program Files (x86)\Acer\abMusic\abMusic.exe" "C:\Users\Public\Desktop\abMusic.lnk" "C:\Program Files (x86)\Acer\abMusic\image\Clear.fi_Music.ico" "{e9af1707-3f3a-49e2-8345-4f2d629d0876}"
+9:17:49:977  procInfo.WorkingDirectory:C:\WINDOWS\TEMP\28615720-042d-49c8-b365-a0759b65de35
+9:17:49:994  proc.WaitForExit()
+9:17:50:70  Add/Remove registry will be modified
+9:17:50:78  C:\Program Files (x86)\Acer\abMusic\abMediaSetup.exe -uninstall is writen into UninstallString
+9:17:50:84  C:\Program Files (x86)\Acer\abMusic\image\Clear.fi_Music.ico is writen into DisplayIcon
+9:17:50:90  0 is writen into WindowsInstaller
+9:17:50:259  WriteModelNameInfo
+9:17:50:486  Find Model Name: Aspire V5-573G
+9:17:50:496  Write ini to C:\WINDOWS\system32\config\systemprofile\AppData\Local\clear.fi\ModelName.ini
+9:17:50:507  Create Tag C:\Program Files (x86)\Acer\abMusic\\upgradeOOBE.tag
+9:17:50:515  remove tag files
+9:17:50:521  Delete C:\Program Files (x86)\Acer\clear.fi Media
+9:17:50:529  Delete C:\Program Files (x86)\Acer\clear.fi Media failed, exception: Could not find a part of the path 'C:\Program Files (x86)\Acer\clear.fi Media'.
+9:17:50:535  Delete C:\Program Files (x86)\Acer\Acer Media
+9:17:50:541  Delete C:\Program Files (x86)\Acer\Acer Media failed, exception: Could not find a part of the path 'C:\Program Files (x86)\Acer\Acer Media'.
+9:17:50:548  Exception - No value exists with that name.
+9:17:50:556  IsClearfiInstalled()
+9:17:50:563  Process is 64bit
+9:17:50:569  CheckPath: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{e9af1707-3f3a-49e2-8345-4f2d629d0876}
+9:17:50:575  Clearfi is installed
+9:17:50:581  GetTmpInstallPath: C:\Program Files (x86)\Acer\abMusic_\
+9:17:50:587  Delete Temp Path if it existed: C:\Program Files (x86)\Acer\abMusic_\
+9:17:50:594  DeleteDirectory exception: Could not find a part of the path 'C:\Program Files (x86)\Acer\abMusic_\'.
+9:17:50:601  remove SetCleanTempPathDone, SilentUpgradeDone key and SetUpgradeDone key
+9:17:50:608  SetCleanTempPathDone - True
+9:17:50:614  SetCleanTempPathDone Exception - No value exists with that name.
+9:17:50:621  SetSilentUpgradeDone - True
+9:17:50:629  SetSilentUpgradeDone Exception - No value exists with that name.
+9:17:50:634  SetUpgradeDone[True]
+9:17:50:642  -------------------------------------------------------Installer Ends-------------------------------------------------------
+20:48:11:953  Remove and unregister decoder file at C:\Program Files (x86)\Acer\clear.fi plug-in
+20:48:12:45  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:48:12:49  procInfo.Arguments:/s /u "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAudioDecoder.ax"
+20:48:12:52  procInfo.WorkingDirectory:c:\windows\system32
+20:48:12:414  Exception delete AcerAudioDecoder.ax :Access to the path 'C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAudioDecoder.ax' is denied.
+20:48:12:444  Remove and unregister decoder file at C:\Program Files (x86)\Acer\clear.fi plug-in
+20:48:12:448  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:48:12:451  procInfo.Arguments:/s /u "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerFLVSplitter.ax"
+20:48:12:454  procInfo.WorkingDirectory:c:\windows\system32
+20:48:12:467  Remove and unregister decoder file at C:\Program Files (x86)\Acer\clear.fi plug-in
+20:48:12:471  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:48:12:474  procInfo.Arguments:/s /u "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMKVSplitter.ax"
+20:48:12:478  procInfo.WorkingDirectory:c:\windows\system32
+20:48:12:491  Remove and unregister decoder file at C:\Program Files (x86)\Acer\clear.fi plug-in
+20:48:12:495  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:48:12:500  procInfo.Arguments:/s /u "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter.ax"
+20:48:12:503  procInfo.WorkingDirectory:c:\windows\system32
+20:48:12:515  Remove and unregister decoder file at C:\Program Files (x86)\Acer\clear.fi plug-in
+20:48:12:521  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:48:12:525  procInfo.Arguments:/s /u "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter2.ax"
+20:48:12:528  procInfo.WorkingDirectory:c:\windows\system32
+20:48:12:541  Remove and unregister decoder file at C:\Program Files (x86)\Acer\clear.fi plug-in
+20:48:12:546  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:48:12:550  procInfo.Arguments:/s /u "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegAudioSplitter.ax"
+20:48:12:553  procInfo.WorkingDirectory:c:\windows\system32
+20:48:12:565  Remove and unregister decoder file at C:\Program Files (x86)\Acer\clear.fi plug-in
+20:48:12:569  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:48:12:576  procInfo.Arguments:/s /u "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegSplitter.ax"
+20:48:12:581  procInfo.WorkingDirectory:c:\windows\system32
+20:48:12:596  -------------------------------------------------------Installer Starts-------------------------------------------------------
+20:48:12:602  Process Path = C:\Users\dinkar\AppData\Local\clear.fi\Media\abMedia\abMediaSetup.exe
+20:48:12:621  work in system session
+20:48:12:624  args = /s
+20:48:12:664  m_szCurrentDir: C:\Users\dinkar\AppData\Local\clear.fi\Media\abMedia\
+20:48:12:667  m_szUserTempDir: C:\WINDOWS\TEMP\clear.fi_media_AOP\
+20:48:12:670  m_szUserTempDir2: C:\WINDOWS\TEMP\clear.fi_media\
+20:48:12:673  IsClearfiInstalled()
+20:48:12:677  Process is 64bit
+20:48:12:680  CheckPath: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{e9af1707-3f3a-49e2-8345-4f2d629d0876}
+20:48:12:683  Clearfi is installed
+20:48:12:688  CurrentVersion=3.00.2004.0
+20:48:12:691  OldVersion=3.00.2003.6
+20:48:12:779  IsPinnedToTaskbar check path[C:\Users\dinkar\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\abMusic.lnk] not found
+20:48:12:782  IsPinnedToTaskbar check path[C:\Users\dinkar\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\clear.fi Media.lnk] not found
+20:48:12:786  IsPinnedToTaskbar check path[C:\Users\dinkar\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Acer Media.lnk] not found
+20:48:12:789  IsPinnedToTaskbar check path[C:\Users\dinkar\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\abMedia.lnk] not found
+20:48:12:792  IsPinnedToTaskbar: False
+20:48:12:795  bClearfiInstalled: True
+20:48:12:798  bUpgrade: True
+20:48:12:801  bSilent: True
+20:48:12:804  m_bPinToTaskbar: False
+20:48:12:898  AcerCloud Related mutex Created New [True]
+20:48:12:944  bSilent & bUpgrade, Backup Registry then SetUpgradeDone(false)
+20:48:12:948  BackupRegistry()
+20:48:12:951  procInfo.FileName:C:\WINDOWS\system32\cmd.exe
+20:48:12:954  procInfo.Arguments:/c reg export HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{e9af1707-3f3a-49e2-8345-4f2d629d0876} "C:\WINDOWS\TEMP\clear.fi_media_AOP\registrybackup.reg"
+20:48:12:957  procInfo.WorkingDirectory:C:\WINDOWS\system32
+20:48:12:993  proc.WaitForExit()
+20:48:13:340  procInfo.FileName:C:\WINDOWS\system32\cmd.exe
+20:48:13:344  procInfo.Arguments:/c reg export HKEY_CLASSES_ROOT\Installer\Products\7071FA9EA3F32E943854F4D226D98067 "C:\WINDOWS\TEMP\clear.fi_media_AOP\registrybackup2.reg"
+20:48:13:347  procInfo.WorkingDirectory:C:\WINDOWS\system32
+20:48:13:356  proc.WaitForExit()
+20:48:13:399  SetUpgradeDone[False]
+20:48:13:448  Is process owner system: True
+20:48:13:452  DeleteTempFolder: C:\WINDOWS\TEMP\clear.fi_media\
+20:48:13:493  DeleteDirectory: C:\WINDOWS\TEMP\clear.fi_media\
+20:48:13:497  m_bIsUpgradeFrom21: False
+20:48:13:501  InstallMode: Silent, InstallAction: Upgrade
+20:48:13:507  BackgroundWork
+20:48:13:510  BackgroundWork Unpin, m_bPinToTaskbar: False
+20:48:13:514  GetInstallPath in LocalMachine Open registry: Software\OEM\clear.fi Media
+20:48:13:517  GetInstallPathFromLocalMachine: C:\Program Files (x86)\Acer\abMusic\
+20:48:13:520  sSystemArgs: C:\Program Files (x86)\Acer\abMusic\unpinmedia.vbs
+20:48:13:523  sUserArgs: C:\WINDOWS\TEMP\clear.fi_media_AOP\unpinmedia.vbs
+20:48:13:535  PinPhotoToTaskbar: script exist - True
+20:48:13:539  Is process owner system: True
+20:48:13:542  System Session, use args with : C:\Program Files (x86)\Acer\abMusic\unpinmedia.vbs
+20:48:13:544  sCmd: "C:\Windows\system32\cscript.exe" "C:\Program Files (x86)\Acer\abMusic\unpinmedia.vbs"
+20:48:14:815  RemoveAllShortCut
+20:48:14:818  Delete C:\Users\Public\Desktop\abMusic.lnk
+20:48:14:870  Delete C:\Users\dinkar\Desktop\abMusic.lnk
+20:48:14:874  Delete C:\Users\Public\Desktop\clear.fi Media.lnk
+20:48:14:877  Delete C:\Users\dinkar\Desktop\clear.fi Media.lnk
+20:48:14:880  Delete C:\Users\Public\Desktop\Acer Media.lnk
+20:48:14:883  Delete C:\Users\dinkar\Desktop\Acer Media.lnk
+20:48:14:887  Delete C:\Users\Public\Desktop\abMedia.lnk
+20:48:14:890  Delete C:\Users\dinkar\Desktop\abMedia.lnk
+20:48:14:893  Delete C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\abMusic.lnk
+20:48:14:945  Delete C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\clear.fi Media.lnk
+20:48:14:949  Delete C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\Acer Media.lnk
+20:48:14:952  Delete C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\abMedia.lnk
+20:48:14:956  LaunchCompressFile
+20:48:14:995  procInfo.FileName:C:\Users\dinkar\AppData\Local\clear.fi\Media\abMedia\abMedia.exe
+20:48:14:999  procInfo.Arguments:
+20:48:15:1  procInfo.WorkingDirectory:C:\Users\dinkar\AppData\Local\clear.fi\Media\abMedia
+20:48:16:61  proc.WaitForExit()
+20:48:31:888  LaunchWixInstaller - Action.Upgrade
+20:48:31:902  RemoveOEMClearfiMedia
+20:48:31:913  DeleteSubKeyTree-clear.fi Media
+20:48:31:929  LaunchWixInstaller - Action.Uninstall
+20:48:31:938  Launch clear.fi installer: C:\WINDOWS\system32\msiexec.exe Args: /X {e9af1707-3f3a-49e2-8345-4f2d629d0876} /norestart /quiet /l*v "C:\oem\abinstaller\abMusic_msi.log"
+20:50:4:833  LaunchWixInstaller - Action.Install
+20:50:4:846  RemoveProductReg
+20:50:4:887  Exception - Cannot delete a subkey tree because the subkey does not exist.
+20:50:4:915  Launch clear.fi installer: C:\WINDOWS\system32\msiexec.exe Args: /i "C:\WINDOWS\TEMP\clear.fi_media_AOP\clear.fi_Media.msi" SHORTCUTDESKTOP=1 ALLUSERS=1 /norestart /quiet /l*v "C:\oem\abinstaller\abMusic_msi.log"
+20:51:38:976  Launch VCRunTime100 SDK installer: C:\WINDOWS\temp\vcredist_x86.exe, Args:  /q /norestart
+20:51:38:986  procInfo.FileName:C:\WINDOWS\temp\vcredist_x86.exe
+20:51:38:997  procInfo.Arguments: /q /norestart
+20:51:39:8  procInfo.WorkingDirectory:C:\WINDOWS\temp
+20:51:39:384  proc.WaitForExit()
+20:51:50:61  Launch AOP Framework installer: C:\WINDOWS\TEMP\clear.fi_media_AOP\AcerOpenPlatformSetup.exe, Args:  /s
+20:51:50:77  procInfo.FileName:C:\WINDOWS\TEMP\clear.fi_media_AOP\AcerOpenPlatformSetup.exe
+20:51:50:89  procInfo.Arguments: /s
+20:51:50:99  procInfo.WorkingDirectory:C:\WINDOWS\TEMP\clear.fi_media_AOP
+20:51:50:139  proc.WaitForExit()
+20:51:55:597  SetRequiredRegistry[Upgrade]
+20:51:55:641  GetInstallPathFromCurrentUser: C:\Program Files (x86)\Acer\abMusic\
+20:51:55:651  action != Action.Uninstall, read install path from CurrentUser and set it into LocalMachine
+20:51:55:661  Succeed to write registry to HKEY_LOCAL_MACHINE 64
+20:51:55:671  Succeed to write registry to HKEY_LOCAL_MACHINE 32
+20:51:55:681  Succeed to set Player Registry 64
+20:51:55:691  Succeed to set Player Registry 32
+20:51:55:701  handle ODD auto-play setting
+20:51:55:711  IsCyberlinkMovieInstalled()
+20:51:55:751  install Acer Video Player
+20:51:55:763  SetVideoRegistry[False]
+20:51:55:773  Is process owner system: True
+20:51:55:783  Auto update, delete WMVideo key.
+20:51:56:55  RegVideoAx[False]
+20:51:56:176  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSplitter.ax
+20:51:56:190  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:56:201  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSplitter.ax"
+20:51:56:210  procInfo.WorkingDirectory:c:\windows\system32
+20:51:56:247  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerAMRDecoder.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAMRDecoder.ax
+20:51:56:268  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:56:278  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAMRDecoder.ax"
+20:51:56:292  procInfo.WorkingDirectory:c:\windows\system32
+20:51:56:337  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerAudioDecoder.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAudioDecoder.ax
+20:51:56:571  Could not find file 'C:\Program Files (x86)\Acer\abMusic\\AcerAudioDecoder.ax'.
+20:51:56:588  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:56:607  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerAudioDecoder.ax"
+20:51:56:674  procInfo.WorkingDirectory:c:\windows\system32
+20:51:56:750  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerFLVSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerFLVSplitter.ax
+20:51:56:769  Could not find file 'C:\Program Files (x86)\Acer\abMusic\\AcerFLVSplitter.ax'.
+20:51:56:790  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:56:803  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerFLVSplitter.ax"
+20:51:56:815  procInfo.WorkingDirectory:c:\windows\system32
+20:51:56:861  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMKVSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMKVSplitter.ax
+20:51:56:881  Could not find file 'C:\Program Files (x86)\Acer\abMusic\\AcerMKVSplitter.ax'.
+20:51:56:894  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:56:907  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMKVSplitter.ax"
+20:51:56:919  procInfo.WorkingDirectory:c:\windows\system32
+20:51:56:967  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMP4Splitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter.ax
+20:51:56:988  Could not find file 'C:\Program Files (x86)\Acer\abMusic\\AcerMP4Splitter.ax'.
+20:51:57:2  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:57:14  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter.ax"
+20:51:57:28  procInfo.WorkingDirectory:c:\windows\system32
+20:51:57:75  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMP4Splitter2.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter2.ax
+20:51:57:91  Could not find file 'C:\Program Files (x86)\Acer\abMusic\\AcerMP4Splitter2.ax'.
+20:51:57:106  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:57:121  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMP4Splitter2.ax"
+20:51:57:138  procInfo.WorkingDirectory:c:\windows\system32
+20:51:57:183  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMpegAudioSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegAudioSplitter.ax
+20:51:57:201  Could not find file 'C:\Program Files (x86)\Acer\abMusic\\AcerMpegAudioSplitter.ax'.
+20:51:57:215  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:57:231  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegAudioSplitter.ax"
+20:51:57:247  procInfo.WorkingDirectory:c:\windows\system32
+20:51:57:290  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerMpegSplitter.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegSplitter.ax
+20:51:57:308  Could not find file 'C:\Program Files (x86)\Acer\abMusic\\AcerMpegSplitter.ax'.
+20:51:57:323  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:57:336  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerMpegSplitter.ax"
+20:51:57:347  procInfo.WorkingDirectory:c:\windows\system32
+20:51:57:392  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerSubtitle.dll to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSubtitle.dll
+20:51:57:536  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:57:551  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSubtitle.dll"
+20:51:57:561  procInfo.WorkingDirectory:c:\windows\system32
+20:51:57:603  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerVC1Decoder.ax to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerVC1Decoder.ax
+20:51:57:621  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:57:636  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerVC1Decoder.ax"
+20:51:57:651  procInfo.WorkingDirectory:c:\windows\system32
+20:51:57:714  bCopy32 C:\Program Files (x86)\Acer\abMusic\\AcerSoundPhoto.dll to C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSoundPhoto.dll
+20:51:57:738  procInfo.FileName:c:\windows\system32\regsvr32.exe
+20:51:57:754  procInfo.Arguments:/s "C:\Program Files (x86)\Acer\clear.fi plug-in\AcerSoundPhoto.dll"
+20:51:57:770  procInfo.WorkingDirectory:c:\windows\system32
+20:51:57:826  SetRegistryForAcerPortal[False]
+20:51:57:857  Process is 64bit
+20:51:57:877  GetInstallPath in LocalMachine Open registry: Software\OEM\clear.fi Media
+20:51:57:900  GetInstallPathFromLocalMachine: C:\Program Files (x86)\Acer\abMusic\
+20:51:57:917  Write Registry: SOFTWARE\Wow6432Node\OEM\Acer\MyApps\{e9af1707-3f3a-49e2-8345-4f2d629d0876}
+20:51:57:930  Get IconPath: C:\Program Files (x86)\Acer\abMusic\image\ico_media_152.png&C:\Program Files (x86)\Acer\abMusic\image\ico_media_114.png&C:\Program Files (x86)\Acer\abMusic\image\ico_media_96.png&C:\Program Files (x86)\Acer\abMusic\image\ico_media_76.png
+20:51:57:940  Get LaunchPath: C:\Program Files (x86)\Acer\abMusic\abMusic.exe
+20:51:57:951  Succeed to SetRegistryForAcerPortal
+20:51:57:961  Run Firewall Setting
+20:51:57:978  sExe=C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting\FirewallSettings.exe
+20:51:57:994  procInfo.FileName:C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting\FirewallSettings.exe
+20:51:58:8  procInfo.Arguments:abMusicDMCDaemon C:\Program Files (x86)\Acer\abMusic\DMCDaemon.exe
+20:51:58:20  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting
+20:51:58:49  proc.WaitForExit()
+20:51:58:798  procInfo.FileName:C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting\FirewallSettings.exe
+20:51:58:812  procInfo.Arguments:abMusicWindowsUpnp C:\Program Files (x86)\Acer\abMusic\WindowsUpnpMV.exe
+20:51:58:823  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\abMusic\MediaSharingSetting
+20:51:58:849  proc.WaitForExit()
+20:51:59:273  handle start menu shortcut, IsPinToTaskbar: False
+20:51:59:283  GetInstallPath in LocalMachine Open registry: Software\OEM\clear.fi Media
+20:51:59:294  GetInstallPathFromLocalMachine: C:\Program Files (x86)\Acer\abMusic\
+20:51:59:309  Desktop Shortcut[C:\Users\Public\Desktop\abMusic.lnk]
+20:51:59:320  Startmenu Shortcut[C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\abMusic.lnk]
+20:51:59:330  IconLocation Shortcut[C:\Program Files (x86)\Acer\abMusic\image\Clear.fi_Music.ico]
+20:51:59:340  AppModelID Shortcut[{e9af1707-3f3a-49e2-8345-4f2d629d0876}]
+20:51:59:352  Target[C:\Program Files (x86)\Acer\abMusic\abMusic.exe]
+20:51:59:364  procInfo.FileName:C:\WINDOWS\TEMP\clear.fi_media_AOP\newshortcut.exe
+20:51:59:374  procInfo.Arguments:"C:\Program Files (x86)\Acer\abMusic\abMusic.exe" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Acer\abMusic.lnk" "C:\Program Files (x86)\Acer\abMusic\image\Clear.fi_Music.ico" "{e9af1707-3f3a-49e2-8345-4f2d629d0876}"
+20:51:59:383  procInfo.WorkingDirectory:C:\WINDOWS\TEMP\clear.fi_media_AOP
+20:51:59:424  proc.WaitForExit()
+20:51:59:551  Create desktop shortcut
+20:51:59:562  procInfo.FileName:C:\WINDOWS\TEMP\clear.fi_media_AOP\newshortcut.exe
+20:51:59:571  procInfo.Arguments:"C:\Program Files (x86)\Acer\abMusic\abMusic.exe" "C:\Users\Public\Desktop\abMusic.lnk" "C:\Program Files (x86)\Acer\abMusic\image\Clear.fi_Music.ico" "{e9af1707-3f3a-49e2-8345-4f2d629d0876}"
+20:51:59:581  procInfo.WorkingDirectory:C:\WINDOWS\TEMP\clear.fi_media_AOP
+20:51:59:610  proc.WaitForExit()
+20:51:59:970  Add/Remove registry will be modified
+20:51:59:982  C:\Program Files (x86)\Acer\abMusic\abMediaSetup.exe -uninstall is writen into UninstallString
+20:51:59:999  C:\Program Files (x86)\Acer\abMusic\image\Clear.fi_Music.ico is writen into DisplayIcon
+20:52:0:14  0 is writen into WindowsInstaller
+20:52:0:243  WriteModelNameInfo
+20:52:0:732  Find Model Name: Aspire V5-573G
+20:52:0:754  Write ini to C:\WINDOWS\system32\config\systemprofile\AppData\Local\clear.fi\ModelName.ini
+20:52:0:776  remove tag files
+20:52:0:790  Delete C:\Program Files (x86)\Acer\clear.fi Media
+20:52:0:802  Delete C:\Program Files (x86)\Acer\clear.fi Media failed, exception: Could not find a part of the path 'C:\Program Files (x86)\Acer\clear.fi Media'.
+20:52:0:814  Delete C:\Program Files (x86)\Acer\Acer Media
+20:52:0:824  Delete C:\Program Files (x86)\Acer\Acer Media failed, exception: Could not find a part of the path 'C:\Program Files (x86)\Acer\Acer Media'.
+20:52:0:842  Exception - No value exists with that name.
+20:52:0:853  IsClearfiInstalled()
+20:52:0:863  Process is 64bit
+20:52:0:872  CheckPath: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{e9af1707-3f3a-49e2-8345-4f2d629d0876}
+20:52:0:882  Clearfi is installed
+20:52:0:894  GetTmpInstallPath: C:\Program Files (x86)\Acer\abMusic_\
+20:52:0:905  Delete Temp Path if it existed: C:\Program Files (x86)\Acer\abMusic_\
+20:52:0:920  DeleteDirectory exception: Could not find a part of the path 'C:\Program Files (x86)\Acer\abMusic_\'.
+20:52:0:949  remove SetCleanTempPathDone, SilentUpgradeDone key and SetUpgradeDone key
+20:52:0:961  SetCleanTempPathDone - True
+20:52:0:971  SetCleanTempPathDone Exception - No value exists with that name.
+20:52:0:981  SetSilentUpgradeDone - True
+20:52:0:991  SetSilentUpgradeDone Exception - No value exists with that name.
+20:52:1:0  SetUpgradeDone[True]
+20:52:1:16  -------------------------------------------------------Installer Ends-------------------------------------------------------

@@ -1,0 +1,40 @@
+18:11:07: Launch Process-media: FirewallSettings, args: MediaDMCDaemon C:\Program Files (x86)\Acer\abMedia\DMCDaemon.exe
+
+18:11:10: Launch Process-media: FirewallSettings, args: MediaDMCDaemonMV C:\Program Files (x86)\Acer\abMedia\DMCDaemonMV.exe
+
+18:11:10: Launch Process-media: FirewallSettings, args: MediaWindowsUpnp C:\Program Files (x86)\Acer\abMedia\WindowsUpnp.exe
+
+18:11:10: Launch Process-media: FirewallSettings, args: MediaWindowsUpnpMV C:\Program Files (x86)\Acer\abMedia\WindowsUpnpMV.exe
+
+18:11:11: Launch Process-media: ExtractDeviceIcon, args: 
+
+12:53:18: Launch Process-media: FirewallSettings, args: MediaDMCDaemon C:\Program Files (x86)\Acer\abMedia\DMCDaemon.exe
+
+12:53:30: Launch Process-media: FirewallSettings, args: MediaDMCDaemonMV C:\Program Files (x86)\Acer\abMedia\DMCDaemonMV.exe
+
+12:53:30: Launch Process-media: FirewallSettings, args: MediaWindowsUpnp C:\Program Files (x86)\Acer\abMedia\WindowsUpnp.exe
+
+12:53:31: Launch Process-media: FirewallSettings, args: MediaWindowsUpnpMV C:\Program Files (x86)\Acer\abMedia\WindowsUpnpMV.exe
+
+12:53:32: Launch Process-media: ExtractDeviceIcon, args: 
+
+09:17:13: Launch Process-media: FirewallSettings, args: MediaDMCDaemon C:\Program Files (x86)\Acer\abMusic\DMCDaemon.exe
+
+09:17:20: Launch Process-media: FirewallSettings, args: MediaDMCDaemonMV C:\Program Files (x86)\Acer\abMusic\DMCDaemonMV.exe
+
+09:17:20: Launch Process-media: FirewallSettings, args: MediaWindowsUpnp C:\Program Files (x86)\Acer\abMusic\WindowsUpnp.exe
+
+09:17:20: Launch Process-media: FirewallSettings, args: MediaWindowsUpnpMV C:\Program Files (x86)\Acer\abMusic\WindowsUpnpMV.exe
+
+09:17:21: Launch Process-media: ExtractDeviceIcon, args: 
+
+20:51:21: Launch Process-media: FirewallSettings, args: MediaDMCDaemon C:\Program Files (x86)\Acer\abMusic\DMCDaemon.exe
+
+20:51:37: Launch Process-media: FirewallSettings, args: MediaDMCDaemonMV C:\Program Files (x86)\Acer\abMusic\DMCDaemonMV.exe
+
+20:51:37: Launch Process-media: FirewallSettings, args: MediaWindowsUpnp C:\Program Files (x86)\Acer\abMusic\WindowsUpnp.exe
+
+20:51:37: Launch Process-media: FirewallSettings, args: MediaWindowsUpnpMV C:\Program Files (x86)\Acer\abMusic\WindowsUpnpMV.exe
+
+20:51:38: Launch Process-media: ExtractDeviceIcon, args: 
+

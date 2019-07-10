@@ -1,0 +1,155 @@
+18::11::22::759  --------------------------------------Start Installer-------------------------------------------------------
+18::11::22::776  Now Date :2015.9.17
+18::11::22::798  User: DK\dinkar
+18::11::22::813  Process Path = C:\Users\dinkar\AppData\Local\Temp\7zSAA2F.tmp\AcerOpenPlatformSetup.exe
+18::11::22::824  args = /s
+18::11::22::843  IsCCDMonitorServiceInstalled Exception:Object reference not set to an instance of an object.
+18::11::22::857  Upgrade() Current App Version=3.09.2004.0
+18::11::22::868  Upgrade() Exception System.NullReferenceException: Object reference not set to an instance of an object.
+   at Setup.Program.Upgrade()
+18::11::22::877  Start Silent Mode
+18::11::22::912  Now Action is going to:Install
+18::11::22::924  UpgradeClose() Exception System.NullReferenceException: Object reference not set to an instance of an object.
+   at Setup.Program.UpgradeClose()
+18::11::22::989  Enter the BackgroundWork
+18::11::23::3  procInfo.FileName:C:\Users\dinkar\AppData\Local\Temp\7zSAA2F.tmp\AcerOpenPlatform.exe
+18::11::23::11  procInfo.Arguments:
+18::11::23::22  procInfo.WorkingDirectory:C:\Users\dinkar\AppData\Local\Temp\7zSAA2F.tmp
+18::11::23::384  proc.WaitForExit()
+18::11::40::578  process return code:0
+18::11::40::594  Delete CCD MonitorService Log Start
+18::11::40::808  Delete CCD MonitorService Log. Get logs failed : System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\ProgramData\Acer\CCDMSrv\logs\CCDMonitorService'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Directory.InternalGetFileDirectoryNames(String path, String userPathOriginal, String searchPattern, Boolean includeFiles, Boolean includeDirs, SearchOption searchOption)
+   at System.IO.Directory.GetFiles(String path, String searchPattern, SearchOption searchOption)
+   at Setup.Program.CleanCCDMonitorServiceLogFile()
+18::11::40::819  Delete CCD MonitorService Log End
+18::11::40::845  LaunchWixInstaller - Action.Install
+18::11::40::856  Launch MSI installer: C:\WINDOWS\system32\msiexec.exe Args: /i "C:\Users\dinkar\AppData\Local\Temp\AOP\AOP.msi" SHORTCUTDESKTOP=1 ALLUSERS=1 /quiet /l*v "C:\oem\abinstaller\AOP_msi_install.log"
+18::11::40::882  Launch MSI WaitForExit
+18::11::43::976  MSI return value:0
+18::11::44::2  Launch VCRunTime100 SDK installer: C:\WINDOWS\temp\vcredist_x86.exe, Args:  /q /norestart
+18::11::44::11  procInfo.FileName:C:\WINDOWS\temp\vcredist_x86.exe
+18::11::44::19  procInfo.Arguments: /q /norestart
+18::11::44::28  procInfo.WorkingDirectory:C:\WINDOWS\temp
+18::11::44::256  proc.WaitForExit()
+18::11::49::314  process return code:5100
+18::11::49::359  GetInstallPathFromCurrentUser: C:\Program Files (x86)\Acer\AOP Framework\
+18::11::49::369  Get install path from CurrentUser: C:\Program Files (x86)\Acer\AOP Framework\
+18::11::49::379  Succeed to write registry to HKEY_LOCAL_MACHINE 64
+18::11::49::399  Succeed to write registry to HKEY_LOCAL_MACHINE 32
+18::11::49::412  Add/Remove registry will be modified
+18::11::49::424  C:\Program Files (x86)\Acer\AOP Framework\uninstall.exe is writen into UninstallString
+18::11::49::443  C:\Program Files (x86)\Acer\AOP Framework\app.ico is writen into DisplayIcon
+18::11::49::453  0 is writen into WindowsInstaller
+18::11::49::465  TerminateAllRunningCCD Start
+18::11::49::475  procInfo.FileName:C:\WINDOWS\system32\taskkill.exe
+18::11::49::484  procInfo.Arguments:/IM ccd.exe /F
+18::11::49::493  procInfo.WorkingDirectory:C:\WINDOWS\system32
+18::11::49::536  proc.WaitForExit()
+18::11::49::968  process return code:128
+18::11::49::978  procInfo.FileName:C:\WINDOWS\system32\taskkill.exe
+18::11::49::986  procInfo.Arguments:/IM CCDMonitorService.exe /F
+18::11::49::995  procInfo.WorkingDirectory:C:\WINDOWS\system32
+18::11::50::25  proc.WaitForExit()
+18::11::50::255  process return code:128
+18::11::50::284  TerminateAllRunningCCD End
+18::11::50::298  Copy file From: C:\Users\dinkar\AppData\Local\Temp\AOP\acer To: C:\Program Files (x86)\Acer\AOP Framework\acer
+18::11::50::338  Copy CCDMonitorService from C:\Users\dinkar\AppData\Local\Temp\AOP\ toC:\Program Files (x86)\Acer\AOP Framework\
+18::11::50::359  InstallCCDService: Uninstall
+18::11::50::368  InstallCCDService: Launch C:\Program Files (x86)\Acer\AOP Framework\CCDMonitorService.exe, with arg: -u
+18::11::50::421  StopClientOperation
+18::11::57::93  Stop CCD.exe
+18::11::57::104  procInfo.FileName:C:\Program Files (x86)\Acer\AOP Framework\CCDMonitorService.exe
+18::11::57::115  procInfo.Arguments:-k
+18::11::57::126  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\AOP Framework
+18::12::1::52  proc.WaitForExit()
+18::12::1::224  process return code:0
+18::12::1::235  procInfo.FileName:C:\Program Files (x86)\Acer\AOP Framework\CCDMonitorService.exe
+18::12::1::249  procInfo.Arguments:-u
+18::12::1::262  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\AOP Framework
+18::12::1::294  proc.WaitForExit()
+18::12::1::419  process return code:0
+18::12::1::930  Is process owner system: False
+18::12::1::940  UpdateSyncAgent Start
+18::12::1::956  UpdateSyncAgent file has been locked : Could not find a part of the path.
+18::12::1::966  Copy file From: C:\Users\dinkar\AppData\Local\clear.fi\AcerCloud\SyncAgent To: C:\Users\dinkar\AppData\Local\AOP SDK\acer infra\acer\SyncAgent
+18::12::1::975  No find Path to copy file
+18::12::1::984  UpdateSyncAgent end
+18::12::1::993  InstallCCDService: Install
+18::12::2::2  InstallCCDService: Launch C:\Program Files (x86)\Acer\AOP Framework\CCDMonitorService.exe, with arg: -i
+18::12::2::13  procInfo.FileName:C:\Program Files (x86)\Acer\AOP Framework\CCDMonitorService.exe
+18::12::2::23  procInfo.Arguments:-i
+18::12::2::31  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\AOP Framework
+18::12::2::60  proc.WaitForExit()
+18::12::2::195  process return code:0
+18::12::2::706  InstallCCDService: Start
+18::12::2::715  InstallCCDService: Launch C:\Program Files (x86)\Acer\AOP Framework\CCDMonitorService.exe, with arg: -s
+18::12::2::723  procInfo.FileName:C:\Program Files (x86)\Acer\AOP Framework\CCDMonitorService.exe
+18::12::2::732  procInfo.Arguments:-s
+18::12::2::740  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\AOP Framework
+18::12::2::775  proc.WaitForExit()
+18::12::3::960  process return code:0
+18::12::3::973  StartClientOperation
+18::12::3::982  Is process owner system: False
+18::12::3::995  cmd: "C:\Users\dinkar\AppData\Local\Temp\AOP\ClientOperation.exe"
+18:12:4:12  LaunchAsNormalUser
+18:12:4:28  processId = 1120
+18:12:4:38  processId get 
+18:12:4:51  token get 
+18:12:4:184  Process WaitForExit start
+18:12:5:256  Process WaitForExit end
+18::12::5::270  procInfo.FileName:C:\Program Files (x86)\Acer\AOP Framework\Tool\gacutil.exe
+18::12::5::279  procInfo.Arguments:/i "C:\Program Files (x86)\Acer\AOP Framework\MyService.dll"
+18::12::5::288  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\AOP Framework\Tool
+18::12::5::319  proc.WaitForExit()
+18::12::5::695  process return code:0
+18::12::5::712  procInfo.FileName:C:\Program Files (x86)\Acer\AOP Framework\Tool\RegAsm.exe
+18::12::5::726  procInfo.Arguments:"C:\Program Files (x86)\Acer\AOP Framework\MyService.dll" /tlb:com.MyService.dll.tlb
+18::12::5::735  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\AOP Framework
+18::12::5::784  proc.WaitForExit()
+18::12::6::485  procInfo.FileName:C:\Program Files (x86)\Acer\AOP Framework\MediaSharingSetting\FirewallSettings.exe
+18::12::6::495  procInfo.Arguments:AcerPortalccd C:\Program Files (x86)\Acer\AOP Framework\acer\ccd.exe
+18::12::6::504  procInfo.WorkingDirectory:C:\Program Files (x86)\Acer\AOP Framework\MediaSharingSetting
+18::12::6::530  proc.WaitForExit()
+18::12::7::623  process return code:0
+18::12::7::637  Succeed to write registry to HKEY_LOCAL_MACHINE 64
+18::12::7::647  Succeed to write registry to HKEY_LOCAL_MACHINE 32
+18::12::7::656  CheckCCDworking CCD.exe is exist.
+18::12::7::722  CheckCCDworking CCDMonitorService is running.
+18::12::7::735  delete auto-run regisry failed : No value exists with that name.
+18::12::7::746  OperateTaskSchedule C:\Users\dinkar\AppData\Local\Temp\AOP\AcerCloudTaskScheduler.exe C:\Program Files (x86)\Acer\AOP Framework\BackgroundAgent.exe \create BacKGroundAgent "C:\Program Files (x86)\Acer\AOP Framework\BackgroundAgent.exe" "C:\Program Files (x86)\Acer\AOP Framework\
+18::12::7::758  procInfo.FileName:C:\Users\dinkar\AppData\Local\Temp\AOP\AcerCloudTaskScheduler.exe
+18::12::7::769  procInfo.Arguments:\create BacKGroundAgent "C:\Program Files (x86)\Acer\AOP Framework\BackgroundAgent.exe" "C:\Program Files (x86)\Acer\AOP Framework\
+18::12::7::778  procInfo.WorkingDirectory:C:\Users\dinkar\AppData\Local\Temp\AOP
+18::12::7::889  proc.WaitForExit()
+18::12::8::345  process return code:0
+18::12::8::355  Return value :0
+18::12::8::364  -------------------------------------------------------Installer Ends-------------------------------------------------------
+12::53::47::246  --------------------------------------Start Installer-------------------------------------------------------
+12::53::47::276  Now Date :2015.12.19
+12::53::47::364  User: NT AUTHORITY\SYSTEM
+12::53::47::402  Process Path = C:\WINDOWS\TEMP\7zSD26F.tmp\AcerOpenPlatformSetup.exe
+12::53::47::416  args = /s
+12::53::47::440  Upgrade() Current App Version=3.09.2004.0
+12::53::47::450  Upgrade() Now installed version:3.09.2004.0
+12::53::47::462  Start Silent Mode
+12::53::47::483  In repair mode. Skip this installation
+9::17::42::83  --------------------------------------Start Installer-------------------------------------------------------
+9::17::42::151  Now Date :2016.4.3
+9::17::42::177  User: NT AUTHORITY\SYSTEM
+9::17::42::192  Process Path = C:\WINDOWS\TEMP\7zSCE1E.tmp\AcerOpenPlatformSetup.exe
+9::17::42::202  args = /s
+9::17::42::221  Upgrade() Current App Version=3.09.2004.0
+9::17::42::232  Upgrade() Now installed version:3.09.2004.0
+9::17::42::248  Start Silent Mode
+9::17::42::268  In repair mode. Skip this installation
+20::51::55::199  --------------------------------------Start Installer-------------------------------------------------------
+20::51::55::220  Now Date :2016.4.28
+20::51::55::266  User: NT AUTHORITY\SYSTEM
+20::51::55::281  Process Path = C:\WINDOWS\TEMP\7zSB040.tmp\AcerOpenPlatformSetup.exe
+20::51::55::295  args = /s
+20::51::55::315  Upgrade() Current App Version=3.09.2004.0
+20::51::55::327  Upgrade() Now installed version:3.09.2004.0
+20::51::55::341  Start Silent Mode
+20::51::55::363  In repair mode. Skip this installation
