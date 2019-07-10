@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">fading animation</string>
+    <string name="fade">fading and changeing of image</string>
+    <string name="moveright">move Right</string>
+    <string name="moveleft">move Left</string>
+    <string name="rotationofimage">rotate</string>
+    <string name="rotateonyaxis">rotate on y</string>
+    <string name="scale">scaling</string>
+</resources>
