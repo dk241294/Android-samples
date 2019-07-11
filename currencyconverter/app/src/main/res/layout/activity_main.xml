@@ -39,10 +39,11 @@
             android:text="dollar" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/dollar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:ems="10"
+            android:inputType="numberDecimal"
             android:layout_gravity="center"
             android:hint="@string/dollar" />
     </LinearLayout>
@@ -64,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,15 +77,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="rupee" />
+            android:text="rupees" />
 
-        <EditText
-            android:id="@+id/editText2"
+        <TextView
+            android:id="@+id/rupee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_gravity="center"
-            android:hint="@string/rupee"
-            android:inputType="textPersonName" />
+            android:ems="10"
+            android:hint="@string/rupee" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

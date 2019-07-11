@@ -5,18 +5,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
     public void conversion(View view){
-        EditText editText=findViewById(R.id.editText);
-        EditText editText2=findViewById(R.id.editText2);
+        EditText editText=findViewById(R.id.dollar);
+        TextView textView=findViewById(R.id.rupee);
         String dollar = editText.getText().toString();
         Double ruppee = Double.parseDouble(dollar)*72;
         String inrupee = Double.toString(ruppee);
         editText.setText(dollar);
-        editText2.setText(inrupee);
+        textView.setText(inrupee);
         Toast.makeText(this, "$ "+dollar+" in rupee "+ ruppee,  Toast.LENGTH_SHORT).show();;
     }
 
