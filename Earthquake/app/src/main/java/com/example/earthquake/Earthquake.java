@@ -1,21 +1,26 @@
 package com.example.earthquake;
 
-import android.app.Activity;
-import android.support.v7.widget.AppCompatAutoCompleteTextView;
-
-public class Earthquake  {
+public class Earthquake {
     private String mMagnitude;
     private String mLocation;
     private long mTimeInMilliseconds;
+    private String mUrl;
 
-    public Earthquake(String magnitude, String location, long timeInMilliseconds) {
+
+    public String getmUrl() {
+        return mUrl;
+    }
+
+
+    public Earthquake(String magnitude, String location, long timeInMilliseconds,String Url) {
         mMagnitude = magnitude;
         mLocation = location;
         mTimeInMilliseconds = timeInMilliseconds;
+        mUrl=Url;
     }
 
-    public String getMagnitude() {
-        return mMagnitude;
+    public double getMagnitude() {
+        return Double.parseDouble(mMagnitude);
     }
 
     public String getLocation() {
