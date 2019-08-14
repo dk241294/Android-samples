@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Food Ordering</string>
+    <string name="ordersummary">Order Summary</string>
+    <string name="quantity">Quantity</string>
+    <string name="orderButton">Order</string>
+    <string name="customername"> Enter customer name</string>
+</resources>
