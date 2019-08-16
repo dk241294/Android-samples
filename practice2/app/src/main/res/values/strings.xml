@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Basket Ball</string>
+    <string name="cocaCola">coca cola</string>
+    <string name="pepsi">pepsi</string>
+    <string name="reset">reset</string>
+    <string name="point3">+ 3 point</string>
+    <string name="point2">+ 2 point</string>
+    <string name="point1">FREE THROW</string>
+    <string name="player1">first player</string>
+
+</resources>
