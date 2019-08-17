@@ -1,9 +1,8 @@
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:background="#ff0">
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffff">
 
 
     <LinearLayout
@@ -11,92 +10,126 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
         tools:context="com.example.practice2.MainActivity">
-<LinearLayout
-    android:layout_width="0dp"
-    android:layout_weight="1"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Team A"
-        android:padding="8dp"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/score_A"
-        android:text="0"
-        android:gravity="center"
-        android:padding="8dp"/>
-    <Button
-        android:id="@+id/point3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/point3"/>
-    <Button
-        android:id="@+id/point2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/point2"/>
-    <Button
-        android:id="@+id/freethrow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/point1"/>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Team A" />
+
+            <TextView
+                android:id="@+id/score_A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_of_shots" />
+
+                <TextView
+                    android:id="@+id/no_of_shots"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/point3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/point3" />
+
+            <Button
+                android:id="@+id/point2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/point2" />
+
+            <Button
+                android:id="@+id/freethrow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/point1" />
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="@color/colorPrimary">
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Team B"
-                android:padding="8dp"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/score_B"
-                android:text="0"
                 android:gravity="center"
-                android:padding="8dp"/>
+                android:padding="8dp"
+                android:text="Team B" />
+
+            <TextView
+                android:id="@+id/score_B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="0" />
+
             <Button
                 android:id="@+id/Bpoint3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/point3"/>
+                android:text="@string/point3" />
+
             <Button
                 android:id="@+id/Bpoint2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/point2"/>
+                android:text="@string/point2" />
+
             <Button
                 android:id="@+id/Bfreethrow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/point1"/>
+                android:text="@string/point1" />
 
         </LinearLayout>
 
     </LinearLayout>
-        <Button
-            android:id="@+id/reset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:text="@string/reset"
-            android:gravity="center"/>
-    </RelativeLayout>
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="@string/reset" />
+</RelativeLayout>

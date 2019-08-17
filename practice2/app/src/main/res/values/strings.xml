@@ -7,5 +7,6 @@
     <string name="point2">+ 2 point</string>
     <string name="point1">FREE THROW</string>
     <string name="player1">first player</string>
+    <string name="no_of_shots">no_of_shots</string>
 
 </resources>

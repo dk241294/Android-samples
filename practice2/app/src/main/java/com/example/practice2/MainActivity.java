@@ -19,12 +19,17 @@ public class MainActivity extends AppCompatActivity {
     Button point3B;
     Button point2B;
     Button point1B;
+    TextView shots;
+    int no_of_shots=0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //counting the number of shots which score
+        shots = findViewById(R.id.no_of_shots);
 
         //button point3 to give score point 3
 
@@ -33,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pointA += 3;
+                no_of_shots++;
                 display(pointA);
             }
         });
@@ -43,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pointA += 2;
+                no_of_shots++;
                 display(pointA);
+
             }
         });
 
@@ -52,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pointA += 1;
+                no_of_shots++;
                 display(pointA);
+
+
             }
         });
 
@@ -91,8 +102,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pointA = 0;
                 pointB = 0;
+                no_of_shots=0;
                 display(pointA);
                 diplayB(pointB);
+                displayShots(no_of_shots);
                 point3B.setEnabled(true);
                 point2B.setEnabled(true);
                 point1B.setEnabled(true);
@@ -120,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
             A_tv.setText("" + i);
+            displayShots(no_of_shots);
 
 
         }
@@ -144,6 +158,9 @@ public class MainActivity extends AppCompatActivity {
 
             B_tv.setText("" + i);
         }
+    }
+    public  void displayShots(int no_of_shots){
+        shots.setText(""+ no_of_shots);
     }
 
 
