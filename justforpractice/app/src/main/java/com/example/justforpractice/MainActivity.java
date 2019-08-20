@@ -1,43 +1,46 @@
 package com.example.justforpractice;
 
-import android.icu.text.NumberFormat;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     int quantity = 0;
+    int finalPrice = 0;
+    final static int PRICE_OF_QUANTITY = 100;
     ArrayList<Topping> toppings;
+    ArrayList<Topping> selected_topping;
+    int dileveryPrice=0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        typeOfTopping();
 
         //setting on click listener on order button so that when button pressed it display quantity and price
         Button order = findViewById(R.id.order_button);
         order.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             public void onClick(View v) {
-
-//                CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream);
-//                boolean hasWhipppedCream = whippedCreamCheckBox.isChecked();
-//
-//                CheckBox chocolateCheckBox = findViewById(R.id.add_chocolate);
-//                boolean haschocalate = chocolateCheckBox.isChecked();
-//
-//                  displaymessage(createOrderSummary(quantity, haschocalate, hasWhipppedCream));
-                displaymessage(createOrderSummary(quantity));
+                displayBill();
+                dileveryOption();
 
 
             }
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (quantity < 10) {
                     quantity++;
-                    display(quantity);
+                    displayQuantity(quantity);
                 } else {
                     Toast.makeText(MainActivity.this, "we take maximum order of 10", Toast.LENGTH_SHORT).show();
                 }
@@ -71,49 +74,26 @@ public class MainActivity extends AppCompatActivity {
                 } else {
 
                     quantity--;
-                    display(quantity);
+                    displayQuantity(quantity);
 
                 }
             }
 
         });
 
-        toppings = new ArrayList<>();
-        toppings.add(new Topping("chocolate",3));
-        toppings.add(new Topping("whipped cream",1));
-        ToppingAdapter toppingAdapter = new ToppingAdapter(this, toppings);
-        ListView listView = findViewById(R.id.toppingList);
-        listView.setAdapter(toppingAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-               if( toppings.get(position).isSelected()){
-                   toppings.get(position).setSelected(false);
-               }else{
-                   toppings.get(position).setSelected(true);
-               }
-                CheckBox c = view.findViewById(R.id.topping_checkbox);
-               if(c.isChecked()){
-                   c.setChecked(false);
-               }else
-                c.setChecked(true
-                );
-            }
-        });
 
     }
 
     //method to display number  added in the quantity TextView
-    public void display(int number) {
+    public void displayQuantity(int number) {
         final TextView tv = findViewById(R.id.no__of_Quantity);
         tv.setText("" + number);
     }
 
-    // display the price
-    public void displaymessage(String message) {
-        TextView order_Summary = findViewById(R.id.order_summary_tv);
-        order_Summary.setText(message);
+    // display the billname of (customer/quantity/topping/price)
+    public void displayBill() {
+        TextView bill = findViewById(R.id.order_summary_tv);
+        bill.setText(customername() + "\n" + price());
     }
 
     //customer name
@@ -123,37 +103,97 @@ public class MainActivity extends AppCompatActivity {
         return customer;
     }
 
-    // calculating the price
-//    public int price_calculate(boolean haschocoalate, boolean haswhippedcream) {
-//        int baseprice = 10;
-//        if (haschocoalate) {
-//            baseprice = baseprice + 1;
-//        }
-//        if (haswhippedcream) {
-//            baseprice = baseprice + 2;
-//        }
+    public String price() {
 
-    //        return quantity * baseprice;
-//
-//    }
-    public int price_calculate() {
-        int toppingsPrice=0;
-        for(Topping t:toppings)
-        {
-            if(t.isSelected()){
-              toppingsPrice += t.getToppingPrice();
-            }
-        }
-       int finalPrice = quantity*(toppingsPrice + 10);
-        return finalPrice;
+        finalPrice = quantity * (PRICE_OF_QUANTITY + toppingPrice());
+        return NumberFormat.getCurrencyInstance().format(finalPrice);
+
     }
 
-    //dispalying the bill and call at price_text_view
-    @RequiresApi(api = Build.VERSION_CODES.N)
-//    public String createOrderSummary(int i, boolean haschocalate, boolean hasWhipppedCream)
-    public String createOrderSummary(int i) {
-        String bill = customername() + "\n Quantity: " + quantity + "\n total " + NumberFormat.getCurrencyInstance().format(price_calculate()) + "\n Thank You";
-        return bill;
+    //    public int toppingPrice() {
+//        int toppingprice = 0;
+//        for (Topping t : toppings) {
+//            if (t.isSelected) {
+//                toppingprice = toppingprice + t.getToppingPrice();
+//            }
+//        }
+//        return toppingprice;
+//
+//    }
+    public int toppingPrice() {
+        int toppingprice = 0;
+        for (Topping t : selected_topping) {
+            toppingprice = toppingprice + t.getToppingPrice();
+        }
+        return toppingprice;
+
+    }
+
+    public void typeOfTopping() {
+        toppings = new ArrayList<Topping>();
+        toppings.add(new Topping("whipped cream", 10));
+        toppings.add(new Topping("chocolate", 20));
+        toppings.add(new Topping("cinnamon", 30));
+        toppings.add(new Topping("ice cream", 50));
+        toppings.add(new Topping("milk", 40));
+        ToppingAdapter toppingAdapter = new ToppingAdapter(this, toppings);
+        ListView listView = findViewById(R.id.toppingList);
+        listView.setAdapter(toppingAdapter);
+        selected_topping = new ArrayList<>();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, toppings.get(position).getToppingName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "topping list working", Toast.LENGTH_SHORT).show();
+
+                CheckBox topping_checkBox = view.findViewById(R.id.topping_checkbox);
+                if (topping_checkBox.isChecked()) {
+                    topping_checkBox.setChecked(false);
+                    //    toppings.get(position).setSelected(false);
+                    selected_topping.remove(toppings.get(position));
+
+
+                } else {
+                    topping_checkBox.setChecked(true);
+                    //   toppings.get(position).setSelected(true);
+                    selected_topping.add(toppings.get(position));
+
+
+                }
+
+
+            }
+        });
+
+
+    }
+
+    public void dileveryOption() {
+        final RadioGroup dilevery = findViewById(R.id.delivery_option);
+        dilevery.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+              //  int selectedId = dilevery.getCheckedRadioButtonId();
+                RadioButton yes = findViewById(R.id.yes);
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dileveryPrice = 24;
+                    }
+                });
+                RadioButton no = findViewById(R.id.no);
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dileveryPrice=0;
+                    }
+                });
+
+
+            }
+        });
+
     }
 
 

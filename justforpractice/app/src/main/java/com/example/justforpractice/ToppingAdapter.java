@@ -25,8 +25,8 @@ public class ToppingAdapter extends ArrayAdapter {
         TextView toppingName = listitem.findViewById(R.id.topping_checkbox);
         toppingName.setText(currentTopping.getToppingName());
 
-        //TextView toppingPrice = listitem.findViewById(R.id.price_of_Topping);
-       // toppingPrice.setText(currentTopping.getToppingPrice());
+//        TextView toppingPrice = listitem.findViewById(R.id.price_of_Topping);
+//        toppingPrice.setText(currentTopping.getToppingPrice());
 
         return listitem;
 
