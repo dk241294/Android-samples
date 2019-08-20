@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Create a new {@link ArrayAdapter} of earthquakes
         EarthquakeAdapter adapter = new EarthquakeAdapter(this, earthquakes);
+        
+        adapter.setEarthquakedatas(earthquakes);
 
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
