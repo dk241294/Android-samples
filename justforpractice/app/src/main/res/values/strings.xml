@@ -3,5 +3,11 @@
     <string name="ordersummary">Order Summary</string>
     <string name="quantity">Quantity</string>
     <string name="orderButton">Order</string>
+    <string name="selectcofeee">Select Coffee</string>
     <string name="customername"> Enter customer name</string>
+    <string-array name="coffeeType">options
+        <item>capuccino</item>
+        <item>espresso</item>
+        <item>latte</item>
+    </string-array>
 </resources>

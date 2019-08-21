@@ -1,133 +1,154 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            style="@style/customText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Toppings" />
-
-        <ListView
-            android:id="@+id/toppingList"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:padding="10dp">
-
-        </ListView>
-
-
-        <TextView
-            style="@style/customText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/quantity" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+            <TextView
+                style="@style/customText"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/selectcofeee"/>
+            <Spinner
+                android:id="@+id/cofeetype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/decrement"
-                android:layout_width="wrap_content"
+
+            </Spinner>
+
+            <TextView
+                style="@style/customText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toppings" />
+
+            <ListView
+                android:id="@+id/toppingList"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:padding="10dp" />
+
+            <TextView
+                style="@style/customText"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="-"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:text="@string/quantity" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/decrement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="-"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/no._of_Quantity"
+                    style="@style/customText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:padding="16dp"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/increment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="+"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/customername"
+                android:maxLines="1"
+                android:maxWidth="@android:dimen/app_icon_size"/>
 
 
             <TextView
-                android:id="@+id/no._of_Quantity"
+                android:id="@+id/order_summary_tv"
                 style="@style/customText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:padding="16dp"
+                android:layout_margin="8dp"
                 android:text="0" />
 
-            <Button
-                android:id="@+id/increment"
-                android:layout_width="wrap_content"
+
+            <TextView
+                style="@style/customText"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="+"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:text="want home dilivery" />
 
+            <RadioGroup
+                android:id="@+id/delivery_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <RadioButton
+                    android:id="@+id/yes"
+                    style="@style/customText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="yes" />
+
+                <RadioButton
+                    android:id="@+id/no"
+                    style="@style/customText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="no" />
+            </RadioGroup>
+            <TextView
+                style="@style/customText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/ordersummary" />
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/customername"
-            android:maxLines="1" />
+    </ScrollView>
 
 
-        <TextView
-            style="@style/customText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/ordersummary" />
 
-        <TextView
-            android:id="@+id/order_summary_tv"
-            style="@style/customText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="0" />
+    <Button
+        android:id="@+id/order_button"
+        style="@style/customText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/orderButton" />
 
-        <Button
-            android:id="@+id/order_button"
-            style="@style/customText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/orderButton" />
-
-        <TextView
-            style="@style/customText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="want home dilivery" />
-
-        <RadioGroup
-            android:id="@+id/delivery_option"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/yes"
-                style="@style/customText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="yes" />
-
-            <RadioButton
-                android:id="@+id/no"
-                style="@style/customText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="no" />
-        </RadioGroup>
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>
