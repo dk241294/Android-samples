@@ -6,6 +6,9 @@
     android:layout_weight="1"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
 
 
     <ScrollView
@@ -40,7 +43,7 @@
             <ListView
                 android:id="@+id/toppingList"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:padding="10dp" />
 
             <TextView
