@@ -23,15 +23,16 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     private static final String LOCATION_SEPARATOR = " of ";
     String primaryLocation;
     String locationOffset;
-    List<Earthquake>earthquakedatas;
+    List<Earthquake> earthquakedatas;
+
     public EarthquakeAdapter(Activity context, ArrayList<Earthquake> Earthquake) {
-        super(context,0, Earthquake);
+        super(context, 0, Earthquake);
         earthquakedatas = Earthquake;
     }
 
     @Override
     public int getCount() {
-        return earthquakedatas!=null ? earthquakedatas.size():0;
+        return earthquakedatas != null ? earthquakedatas.size() : 0;
     }
 
     @Override
@@ -47,11 +48,10 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         String formattedMagnitude = formatMagnitude(currentearthquake.getMagnitude());
         magnitudeTextView.setText(formattedMagnitude);
-        GradientDrawable magnitudeCircle = (GradientDrawable) magnitudeTextView.getBackground();
 
+        GradientDrawable magnitudeCircle = (GradientDrawable) magnitudeTextView.getBackground();
         // Get the appropriate background color based on the current earthquake magnitude
         int magnitudeColor = getMagnitudeColor(currentearthquake.getMagnitude());
-
         // Set the color on the magnitude circle
         magnitudeCircle.setColor(magnitudeColor);
 
@@ -131,7 +131,6 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     }
 
 
-
     private String formatMagnitude(double magnitude) {
         DecimalFormat magnitudeFormat = new DecimalFormat("0.0");
         return magnitudeFormat.format(magnitude);
@@ -158,7 +157,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     }
 
     public void setEarthquakedatas(List<Earthquake> earthquakedatas) {
-        if(earthquakedatas!=null && earthquakedatas.size()>0) {
+        if (earthquakedatas != null && earthquakedatas.size() > 0) {
             this.earthquakedatas = earthquakedatas;
             notifyDataSetChanged();
         }
