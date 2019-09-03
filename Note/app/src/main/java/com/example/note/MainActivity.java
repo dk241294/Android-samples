@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.note.adapter.NotesRecyclerAdapter;
 import com.example.note.model.Note;
@@ -15,7 +16,7 @@ import com.example.note.util.VerticalSpacingItemDecorator;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NotesRecyclerAdapter.ViewHolder.OnNoteListener {
     private static final String TAG = "MainActivity";
     //ui
     RecyclerView recyclerView;
@@ -60,10 +61,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(verticalSpacingItemDecorator);
 
         //send reference and data to adapter
-        notesRecyclerAdapter = new NotesRecyclerAdapter(notes);
+        notesRecyclerAdapter = new NotesRecyclerAdapter(notes,this);
 
         //setting adapter to recylerview
         recyclerView.setAdapter(notesRecyclerAdapter);
+
+    }
+
+    @Override
+    public void onNoteClick(int position) {
+        //here to write code to navigate new Activity
+        Toast.makeText(this,notes.get(position).toString(),Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onNoteClick: "+position);
 
     }
 }
