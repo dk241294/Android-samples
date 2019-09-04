@@ -5,7 +5,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -71,8 +73,10 @@ public class MainActivity extends AppCompatActivity implements NotesRecyclerAdap
     @Override
     public void onNoteClick(int position) {
         //here to write code to navigate new Activity
-        Toast.makeText(this,notes.get(position).toString(),Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onNoteClick: "+position);
+        Intent intent =new Intent(this,NoteActivity.class);
+        intent.putExtra("selected_note", notes.get(position));
+        startActivity(intent );
 
     }
 }
