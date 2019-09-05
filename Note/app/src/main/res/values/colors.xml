@@ -10,6 +10,7 @@
     <color name="lightYellow">#ffffb3</color>
     <color name="mediumYellowColor">#ffdf80</color>
     <color name="darkYellowColor">#ffd24d</color>
+    <color name="whitecolor">#fff</color>
 
 
 </resources>
