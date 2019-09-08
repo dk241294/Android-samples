@@ -15,7 +15,8 @@ import android.widget.TextView;
 import com.example.note.model.Note;
 import com.example.note.util.LineEditText;
 
-public class NoteActivity extends AppCompatActivity implements View.OnTouchListener, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
+public class NoteActivity extends AppCompatActivity implements View.OnTouchListener,
+        GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener, View.OnClickListener {
     private LineEditText lineEditText;
     private EditText editTitle;
     private TextView viewTitle;
@@ -62,6 +63,8 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     private void setListener() {
         gestureDetector = new GestureDetector(this, this);
         lineEditText.setOnTouchListener(this);
+        viewTitle.setOnClickListener(this);
+        checkImageButton.setOnClickListener(this);
     }
 
     private boolean getIncomingIntent() {
@@ -160,6 +163,35 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     public boolean onDoubleTapEvent(MotionEvent e) {
         return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.done_button: {
+                disableEditMode();
+                break;
+            }
+            case R.id.note_text_title: {
+                enableEditMode();
+                editTitle.requestFocus();
+                editTitle.setSelection(editTitle.length());
+                break;
+
+            }
+
+
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mode == EDIT_MODE_ENABLED) {
+            onClick(checkImageButton);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
 
