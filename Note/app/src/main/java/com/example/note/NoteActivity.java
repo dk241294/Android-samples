@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.hardware.input.InputManager;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -224,6 +225,21 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
             onClick(checkImageButton);
         } else {
             super.onBackPressed();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("mode",mode);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        mode=savedInstanceState.getInt("mode");
+        if(mode==EDIT_MODE_ENABLED){
+            enableEditMode();
         }
     }
 }
