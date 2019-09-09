@@ -69,6 +69,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         lineEditText.setOnTouchListener(this);
         viewTitle.setOnClickListener(this);
         checkImageButton.setOnClickListener(this);
+        backImageButton.setOnClickListener(this);
     }
 
     private boolean getIncomingIntent() {
@@ -206,6 +207,10 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
                 editTitle.setSelection(editTitle.length());
                 break;
 
+            }
+            case R.id.back_button:{
+                finish();//work only in activity calll destroy method .not work in fragment
+                break;
             }
 
 
