@@ -1,7 +1,9 @@
 package com.example.note;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -65,9 +67,10 @@ public class MainActivity extends AppCompatActivity implements
         VerticalSpacingItemDecorator verticalSpacingItemDecorator = new VerticalSpacingItemDecorator(10);
         //set spacing to recylerview
         recyclerView.addItemDecoration(verticalSpacingItemDecorator);
+        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
 
         //send reference and data to adapter
-        notesRecyclerAdapter = new NotesRecyclerAdapter(notes,this);
+        notesRecyclerAdapter = new NotesRecyclerAdapter(notes, this);
 
         //setting adapter to recylerview
         recyclerView.setAdapter(notesRecyclerAdapter);
@@ -77,16 +80,34 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onNoteClick(int position) {
         //here to write code to navigate new Activity
-        Log.d(TAG, "onNoteClick: "+position);
-        Intent intent =new Intent(this,NoteActivity.class);
+        Log.d(TAG, "onNoteClick: " + position);
+        Intent intent = new Intent(this, NoteActivity.class);
         intent.putExtra("selected_note", notes.get(position));
-        startActivity(intent );
+        startActivity(intent);
 
     }
 
     @Override
     public void onClick(View v) {
-Intent intent=new Intent(this,NoteActivity.class);
-startActivity(intent);
+        Intent intent = new Intent(this, NoteActivity.class);
+        startActivity(intent);
     }
+
+    private void deleteNote(Note note) {
+        notes.remove(note);
+        notesRecyclerAdapter.notifyDataSetChanged();
+    }
+
+    private ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            deleteNote(notes.get(viewHolder.getAdapterPosition()));
+
+        }
+    };
 }
