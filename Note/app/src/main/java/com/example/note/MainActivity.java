@@ -3,6 +3,7 @@ package com.example.note;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,10 +18,13 @@ import android.widget.Toast;
 
 import com.example.note.adapter.NotesRecyclerAdapter;
 import com.example.note.model.Note;
+import com.example.note.persistence.NoteDataBase;
+import com.example.note.persistence.NoteRepository;
 import com.example.note.util.VerticalSpacingItemDecorator;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
         NotesRecyclerAdapter.ViewHolder.OnNoteListener, View.OnClickListener {
@@ -29,21 +33,44 @@ public class MainActivity extends AppCompatActivity implements
     RecyclerView recyclerView;
 
     //var
-    private ArrayList<Note> notes = new ArrayList<>();
+    private ArrayList<Note> mNotes = new ArrayList<>();
     private NotesRecyclerAdapter notesRecyclerAdapter;
+    private NoteRepository noteRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         recyclerView = findViewById(R.id.recycler_view);
         initRecyclerView();
-        fakeData();
+        //   fakeData();
         Toolbar toolbar = findViewById(R.id.note_toolbar);
         setSupportActionBar(toolbar);
+        Log.d(TAG, "onCreate: thread" + Thread.currentThread().getName());
         setTitle("Notes");
         findViewById(R.id.fab).setOnClickListener(this);
+        noteRepository = new NoteRepository(this);
+        retrieveNotes();
 
+    }
+
+
+
+    private void retrieveNotes() {
+        noteRepository.retriveNoteTask().observe(this, new Observer<List<Note>>() {
+            @Override
+            public void onChanged(List<Note> notes) {
+                if (mNotes.size() > 0) {
+                    mNotes.clear();
+                }
+                if (notes!=null) {
+                    mNotes.addAll(notes);
+                }
+                notesRecyclerAdapter.notifyDataSetChanged();
+
+            }
+        });
     }
 
     //fake data for demo
@@ -53,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements
             note.setTitle("title " + i);
             note.setContent("title" + i);
             note.setTimeStamp("jan 2019");
-            notes.add(note);
+            mNotes.add(note);
 
         }
         notesRecyclerAdapter.notifyDataSetChanged();
@@ -70,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
 
         //send reference and data to adapter
-        notesRecyclerAdapter = new NotesRecyclerAdapter(notes, this);
+        notesRecyclerAdapter = new NotesRecyclerAdapter(mNotes, this);
 
         //setting adapter to recylerview
         recyclerView.setAdapter(notesRecyclerAdapter);
@@ -82,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements
         //here to write code to navigate new Activity
         Log.d(TAG, "onNoteClick: " + position);
         Intent intent = new Intent(this, NoteActivity.class);
-        intent.putExtra("selected_note", notes.get(position));
+        intent.putExtra("selected_note", mNotes.get(position));
         startActivity(intent);
 
     }
@@ -94,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void deleteNote(Note note) {
-        notes.remove(note);
+        mNotes.remove(note);
         notesRecyclerAdapter.notifyDataSetChanged();
     }
 
@@ -106,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            deleteNote(notes.get(viewHolder.getAdapterPosition()));
+            deleteNote(mNotes.get(viewHolder.getAdapterPosition()));
 
         }
     };

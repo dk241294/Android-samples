@@ -3,9 +3,9 @@ package com.example.note;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.hardware.input.InputManager;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -17,22 +17,27 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.note.model.Note;
+import com.example.note.persistence.NoteDao;
+import com.example.note.persistence.NoteRepository;
 import com.example.note.util.LineEditText;
+import com.example.note.util.Utility;
 
 public class NoteActivity extends AppCompatActivity implements View.OnTouchListener,
-        GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener, View.OnClickListener {
+        GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener, View.OnClickListener, TextWatcher {
     private LineEditText lineEditText;
     private EditText editTitle;
     private TextView viewTitle;
     private boolean isNewNote;
-    private Note noteInitial;
+    private Note initialNote = new Note();
     private RelativeLayout checkContainer, backArrowContainer;
     private GestureDetector gestureDetector;
     private static final int EDIT_MODE_ENABLED = 1;
     private static final int EDIT_MODE_DISABLED = 0;
     private int mode;
     private ImageButton backImageButton, checkImageButton;
-
+    private NoteRepository noteRepository;
+    private Note finalNote = new Note();
+    private NoteDao noteDao;
 
     private static final String TAG = "NoteActivity";
 
@@ -48,6 +53,9 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         checkImageButton = findViewById(R.id.done_button);
         checkContainer = findViewById(R.id.check_container);
         backArrowContainer = findViewById(R.id.back_arrow_container);
+        noteRepository = new NoteRepository(this);
+
+
         setListener();
 
 
@@ -71,43 +79,38 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         viewTitle.setOnClickListener(this);
         checkImageButton.setOnClickListener(this);
         backImageButton.setOnClickListener(this);
+        editTitle.addTextChangedListener(this);
     }
 
     private boolean getIncomingIntent() {
         if (getIntent().hasExtra("selected_note")) {
-            noteInitial = getIntent().getParcelableExtra("selected_note");
+            initialNote = getIntent().getParcelableExtra("selected_note");
+            finalNote = getIntent().getParcelableExtra("selected_note");
             mode = EDIT_MODE_DISABLED;
             isNewNote = false;
             return false;
         }
+
         mode = EDIT_MODE_ENABLED;
         isNewNote = true;
         return true;
     }
-    private void disableContentInteracton(){
+
+    private void disableContentInteracton() {
         editTitle.setKeyListener(null);
         editTitle.setFocusable(false);
         editTitle.setFocusableInTouchMode(false);
         editTitle.setCursorVisible(false);
         editTitle.clearFocus();
     }
-    private void enableContentInteracton(){
+
+    private void enableContentInteracton() {
         editTitle.setKeyListener(new EditText(this).getKeyListener());
         editTitle.setFocusable(true);
         editTitle.setFocusableInTouchMode(true);
         editTitle.setCursorVisible(true);
         editTitle.requestFocus();
     }
-    private  void hideSoftKeyboard(){
-        InputMethodManager imm= (InputMethodManager) this.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        View view=this.getCurrentFocus();
-        if(view==null){
-            view=new View(this);
-
-        }
-        imm.hideSoftInputFromWindow(view.getWindowToken(),0);
-    }
-
     private void enableEditMode() {
 
         backArrowContainer.setVisibility(View.GONE);
@@ -118,7 +121,6 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         enableContentInteracton();
     }
 
-
     private void disableEditMode() {
         backArrowContainer.setVisibility(View.VISIBLE);
         editTitle.setVisibility(View.GONE);
@@ -127,21 +129,65 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         mode = EDIT_MODE_DISABLED;
         disableContentInteracton();
         hideSoftKeyboard();
+        String temp = lineEditText.getText().toString();
+        temp = temp.replace("\n", "");
+        temp = temp.replace(" ", "");
+        if (temp.length() > 0) {
+            finalNote.setTitle(lineEditText.getText().toString());
+            String timeStamp = Utility.getCurrentTimeStamp();
+            finalNote.setContent(lineEditText.getText().toString());
+            finalNote.setTimeStamp(timeStamp);
+            if (!finalNote.getContent().equals(initialNote.getContent()) || !finalNote.getTitle().equals(initialNote.getTitle())) {
 
+                saveChanges();
+            }
+        }
 
     }
-
     private void setNoteProperties() {
-        viewTitle.setText(noteInitial.getTitle());
-        editTitle.setText(noteInitial.getTitle());
-        lineEditText.setText(noteInitial.getContent());
+        viewTitle.setText(initialNote.getTitle());
+        editTitle.setText(initialNote.getTitle());
+        lineEditText.setText(initialNote.getContent());
     }
 
     private void setNewNoteProperties() {
-        viewTitle.setText("new note");
-        editTitle.setText("new note");
+        viewTitle.setText("Note title");
+        editTitle.setText("Note Title");
+        initialNote = new Note();
+        finalNote = new Note();
+        initialNote.setTitle("Note Title");
+        finalNote.setTitle("Note Title");
 
     }
+
+
+    private void hideSoftKeyboard() {
+        InputMethodManager imm = (InputMethodManager) this.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        View view = this.getCurrentFocus();
+        if (view == null) {
+            view = new View(this);
+
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
+
+
+
+    private void saveChanges() {
+        if (isNewNote) {
+            saveNewNote();
+        } else {
+
+        }
+
+    }
+
+    private void saveNewNote() {
+        noteRepository.insertNoteTask(finalNote);
+    }
+
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
@@ -209,7 +255,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
                 break;
 
             }
-            case R.id.back_button:{
+            case R.id.back_button: {
                 finish();//work only in activity calll destroy method .not work in fragment
                 break;
             }
@@ -231,16 +277,32 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("mode",mode);
+        outState.putInt("mode", mode);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        mode=savedInstanceState.getInt("mode");
-        if(mode==EDIT_MODE_ENABLED){
+        mode = savedInstanceState.getInt("mode");
+        if (mode == EDIT_MODE_ENABLED) {
             enableEditMode();
         }
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        viewTitle.setText(s.toString());
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
     }
 }
 

@@ -16,11 +16,14 @@ import java.util.ListIterator;
 public interface NoteDao {
     @Insert
    long[] insertNotes(Note...notes);//...array of notes
+
     @Delete
     int delete(Note... note);
+
     @Update
-    int update(Note... note);
-    @Query("select *from notes ")
+    int updateNotes(Note... note);
+
+    @Query("SELECT * FROM notes")
     LiveData<List<Note>>getNotes();
 
 

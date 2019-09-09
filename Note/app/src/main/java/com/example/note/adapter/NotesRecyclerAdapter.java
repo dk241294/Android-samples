@@ -1,5 +1,6 @@
 package com.example.note.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.note.R;
 import com.example.note.model.Note;
+import com.example.note.util.Utility;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class NotesRecyclerAdapter extends RecyclerView.Adapter<NotesRecyclerAdapter.ViewHolder> {
+    private static final String TAG = "NotesRecyclerAdapter";
     //datastructure to hold note object
     private ArrayList<Note> notes = new ArrayList<>();
     private ViewHolder.OnNoteListener onNoteListener;
@@ -22,7 +27,7 @@ public class NotesRecyclerAdapter extends RecyclerView.Adapter<NotesRecyclerAdap
     //default constructor
     public NotesRecyclerAdapter(ArrayList<Note> notes, ViewHolder.OnNoteListener onNoteListener) {
         this.notes = notes;
-        this.onNoteListener=onNoteListener;
+        this.onNoteListener = onNoteListener;
     }
 
     @NonNull
@@ -38,10 +43,19 @@ public class NotesRecyclerAdapter extends RecyclerView.Adapter<NotesRecyclerAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        try {
+            String month = notes.get(position).getTimeStamp().substring(0, 2);
+            month = Utility.getMonthFromNumber(month);
+            String year = notes.get(position).getTimeStamp().substring(3);
+            String timeStamp = month + " " + year;
+            holder.timestamp.setText(timeStamp);
+            holder.title.setText(notes.get(position).getTitle());
+
+        } catch (NullPointerException e) {
+            Log.e(TAG, "onBindViewHolder:NullPointerException " + e.getMessage());
+        }
         //call for every single entery in list
         //set  the data on item
-        holder.timestamp.setText(notes.get(position).getTimeStamp());
-        holder.title.setText(notes.get(position).getTitle());
 
 
     }
