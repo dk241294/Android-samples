@@ -9,16 +9,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.note.adapter.NotesRecyclerAdapter;
 import com.example.note.model.Note;
 import com.example.note.util.VerticalSpacingItemDecorator;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements NotesRecyclerAdapter.ViewHolder.OnNoteListener {
+public class MainActivity extends AppCompatActivity implements
+        NotesRecyclerAdapter.ViewHolder.OnNoteListener, View.OnClickListener {
     private static final String TAG = "MainActivity";
     //ui
     RecyclerView recyclerView;
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NotesRecyclerAdap
         Toolbar toolbar = findViewById(R.id.note_toolbar);
         setSupportActionBar(toolbar);
         setTitle("Notes");
+        findViewById(R.id.fab).setOnClickListener(this);
 
     }
 
@@ -78,5 +82,11 @@ public class MainActivity extends AppCompatActivity implements NotesRecyclerAdap
         intent.putExtra("selected_note", notes.get(position));
         startActivity(intent );
 
+    }
+
+    @Override
+    public void onClick(View v) {
+Intent intent=new Intent(this,NoteActivity.class);
+startActivity(intent);
     }
 }
