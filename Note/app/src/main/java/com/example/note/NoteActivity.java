@@ -85,7 +85,12 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean getIncomingIntent() {
         if (getIntent().hasExtra("selected_note")) {
             initialNote = getIntent().getParcelableExtra("selected_note");
-            finalNote = getIntent().getParcelableExtra("selected_note");
+        //    finalNote = getIntent().getParcelableExtra("selected_note");
+            finalNote=new Note();
+            finalNote.setTitle(initialNote.getTitle());
+            finalNote.setContent(initialNote.getContent());
+            finalNote.setTimeStamp(initialNote.getTimeStamp());
+            finalNote.setId(initialNote.getId());
             mode = EDIT_MODE_DISABLED;
             isNewNote = false;
             return false;
@@ -111,6 +116,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         editTitle.setCursorVisible(true);
         editTitle.requestFocus();
     }
+
     private void enableEditMode() {
 
         backArrowContainer.setVisibility(View.GONE);
@@ -133,17 +139,18 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         temp = temp.replace("\n", "");
         temp = temp.replace(" ", "");
         if (temp.length() > 0) {
-            finalNote.setTitle(lineEditText.getText().toString());
-            String timeStamp = Utility.getCurrentTimeStamp();
+            finalNote.setTitle(editTitle.getText().toString());
             finalNote.setContent(lineEditText.getText().toString());
+            String timeStamp = Utility.getCurrentTimeStamp();
             finalNote.setTimeStamp(timeStamp);
             if (!finalNote.getContent().equals(initialNote.getContent()) || !finalNote.getTitle().equals(initialNote.getTitle())) {
-
+                Log.d(TAG, "disableEditMode: called");
                 saveChanges();
             }
         }
 
     }
+
     private void setNoteProperties() {
         viewTitle.setText(initialNote.getTitle());
         editTitle.setText(initialNote.getTitle());
@@ -156,7 +163,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         initialNote = new Note();
         finalNote = new Note();
         initialNote.setTitle("Note Title");
-        finalNote.setTitle("Note Title");
+
 
     }
 
@@ -172,15 +179,17 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     }
 
 
-
-
-
     private void saveChanges() {
         if (isNewNote) {
             saveNewNote();
         } else {
-
+            updateNote();
         }
+
+    }
+
+    private void updateNote() {
+        noteRepository.updateNoteTask(finalNote);
 
     }
 

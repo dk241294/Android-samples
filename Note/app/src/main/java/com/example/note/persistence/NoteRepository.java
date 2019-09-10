@@ -5,7 +5,9 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.room.Database;
 
+import com.example.note.async.DeleteAsyncTask;
 import com.example.note.async.InsertAsyncTask;
+import com.example.note.async.UpdateAsyncTask;
 import com.example.note.model.Note;
 
 import java.util.List;
@@ -24,7 +26,8 @@ public class NoteRepository {
         new InsertAsyncTask(noteDataBase.getNoteDao()).execute(note);
     }
 
-    public void updateNote(Note note) {
+    public void updateNoteTask(Note note) {
+        new UpdateAsyncTask(noteDataBase.getNoteDao()).execute(note);
     }
 
     public LiveData<List<Note>> retriveNoteTask() {
@@ -32,5 +35,6 @@ public class NoteRepository {
     }
 
     public void deleteNote(Note note) {
+        new DeleteAsyncTask(noteDataBase.getNoteDao()).execute(note);
     }
 }

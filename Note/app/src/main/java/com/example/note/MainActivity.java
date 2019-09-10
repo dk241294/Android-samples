@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements
     private void deleteNote(Note note) {
         mNotes.remove(note);
         notesRecyclerAdapter.notifyDataSetChanged();
+        noteRepository.deleteNote(note);
     }
 
     private ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
