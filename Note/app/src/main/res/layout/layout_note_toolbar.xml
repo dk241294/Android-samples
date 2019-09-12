@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:src="@drawable/ic_arrow_back_black_24dp"
+            android:padding="10dp"
             />
     </RelativeLayout>
     <RelativeLayout
@@ -37,6 +38,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_done_black_24dp"
         android:background="?attr/selectableItemBackground"
+        android:padding="10dp"
          />
 
     </RelativeLayout>

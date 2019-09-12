@@ -33,6 +33,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     private GestureDetector gestureDetector;
     private static final int EDIT_MODE_ENABLED = 1;
     private static final int EDIT_MODE_DISABLED = 0;
+    private static final int LINE_EDIT_MODE_ENABLE = 1;
     private int mode;
     private ImageButton backImageButton, checkImageButton;
     private NoteRepository noteRepository;
@@ -75,7 +76,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
 
     private void setListener() {
         gestureDetector = new GestureDetector(this, this);
-        lineEditText.setOnTouchListener(this);
+        lineEditText.setOnClickListener(this);
         viewTitle.setOnClickListener(this);
         checkImageButton.setOnClickListener(this);
         backImageButton.setOnClickListener(this);
@@ -85,8 +86,8 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean getIncomingIntent() {
         if (getIntent().hasExtra("selected_note")) {
             initialNote = getIntent().getParcelableExtra("selected_note");
-        //    finalNote = getIntent().getParcelableExtra("selected_note");
-            finalNote=new Note();
+            //    finalNote = getIntent().getParcelableExtra("selected_note");
+            finalNote = new Note();
             finalNote.setTitle(initialNote.getTitle());
             finalNote.setContent(initialNote.getContent());
             finalNote.setTimeStamp(initialNote.getTimeStamp());
@@ -107,6 +108,15 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         editTitle.setFocusableInTouchMode(false);
         editTitle.setCursorVisible(false);
         editTitle.clearFocus();
+    }
+
+    private void enableLineEdit() {
+        backArrowContainer.setVisibility(View.GONE);
+        checkContainer.setVisibility(View.VISIBLE);
+        viewTitle.setVisibility(View.VISIBLE);
+        editTitle.setVisibility(View.GONE);
+        mode = EDIT_MODE_DISABLED;
+
     }
 
     private void enableContentInteracton() {
@@ -241,6 +251,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     public boolean onDoubleTap(MotionEvent e) {
         Log.d(TAG, "onDoubleTap: double tapped !");
+
         enableEditMode();
         return false;
     }
@@ -250,10 +261,12 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
         return false;
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.done_button: {
+                saveChanges();
                 disableEditMode();
                 break;
             }
@@ -267,6 +280,11 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
             case R.id.back_button: {
                 finish();//work only in activity calll destroy method .not work in fragment
                 break;
+
+            }
+            case R.id.note_text: {
+                enableLineEdit();
+                saveChanges();
             }
 
 
@@ -278,7 +296,10 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     public void onBackPressed() {
         if (mode == EDIT_MODE_ENABLED) {
             onClick(checkImageButton);
-        } else {
+        }
+
+         else {
+
             super.onBackPressed();
         }
     }
@@ -306,6 +327,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         viewTitle.setText(s.toString());
+
 
     }
 
