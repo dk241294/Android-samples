@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("deepak");
         arrayList.add("kumar");
         arrayList.add("deepak");
-        arrayList.add("kumar"); arrayList.add("deepak");
+        arrayList.add("kumar");
+        arrayList.add("deepak");
         arrayList.add("kumar");
 
 
